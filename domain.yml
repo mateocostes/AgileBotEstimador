@@ -1,0 +1,45 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - despedir
+  - afirmar
+  - negar
+  - desafiar_bot
+  - presentarse
+  - estimacion_tarea
+  - persona_tarea
+  
+entities:
+  - participante
+  - tarea
+
+slots:
+  participante:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  tarea:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+    
+responses:
+  utter_despedir:
+  - text: "Chau!"
+  - text: "Hasta luego!"
+  - text: "Adios!"
+
+  utter_iamabot:
+  - text: "Soy un agilebot."
+
+actions:
+  - guardar_nombre
+  - dar_motivo_estimacion
+  - dar_motivo_persona
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

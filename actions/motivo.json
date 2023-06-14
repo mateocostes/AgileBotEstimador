@@ -1,0 +1,16 @@
+{ 
+    "tarea":[
+       "base de datos en python"
+    ],
+    "tareas_similares":[
+      {"tarea": ["algo con python"], "estimacion": ["5"], "autor": "ale"},
+      {"tarea": ["algo con base de datos"], "estimacion": ["8"], "autor": "agustin"}
+    ],
+    "promedio": "8",
+   "posibles_ejecutores":[
+   {"persona": ["mateo"], "aptitudes": ["python"]},
+   {"persona": ["agustin"], "aptitudes": ["base de datos"]}
+   ]
+}
+
+

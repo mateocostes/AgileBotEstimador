@@ -1,0 +1,118 @@
+version: "3.1"
+
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+    - buenos dias
+    - buenas tardes
+    - buenas
+    - vamos
+    - que haces
+    - buenas noches
+    - hey
+    - que tal
+
+- intent: despedir
+  examples: |
+    - chau
+    - nos vemos
+    - adios
+    - nos vemos despues
+    - que tengas un lindo dia
+    - que tengas buenas tardes
+    - nos vemos luego
+    - hasta luego
+
+- intent: afirmar
+  examples: |
+    - si
+    - s
+    - por supuesto
+    - correcto
+    - tal cual
+    - claro
+
+- intent: negar
+  examples: |
+    - no
+    - n
+    - nunca
+    - no creo
+    - imposible
+    - no hay manera
+    - no necesariamente
+    
+- intent: desafiar_bot
+  examples: |
+    - eres un bot?
+    - eres un humano?
+    - estoy hablando con un bot?
+    - estoy hablando con un ser vivo?
+
+- intent: presentarse
+  examples: |
+    - [mateocostes](participante)
+    - [agustinschilling](participante)
+    - [felipearroyo](participante)
+    - [gonzalosuarez](participante)
+    - [juanperez](participante)
+    - [usuarionuevo](participante)
+    - [nombre](participante)
+    - [pepe](participante)
+
+- intent: estimacion_tarea
+  examples: |
+  - Quisiera una estimacion para la tarea [tarea]
+  - Cuanto tiempo tomara completar la [tarea]?
+  - Necesito una estimacion para la tarea [tarea]
+  - Puedes darme una estimacion de tiempo para la [tarea]?
+  - Me gustaria saber cuanto tiempo tomara completar la [tarea]
+  - Quiero una estimación para la tarea [tarea]
+  - Cuanto tiempo se tardo en proyectos anteriores similares a la [tarea]?
+  - Necesito una estimacion de tiempo para la [tarea] basada en casos anteriores
+  - Cual es la duración promedio de la [tarea] en proyectos similares?
+  - Estoy buscando una estimacion de tiempo para la [tarea]
+  - Podrias decirme cuanto tiempo llevara realizar la [tarea]?
+  - Cuanto tiempo estimas que llevara completar la [tarea]?
+  - Puedes darme una estimacion aproximada para la [tarea]?
+  - Me gustaria saber cuanto esfuerzo se necesita para la [tarea]
+  - Cuanto tiempo tomara en promedio realizar la [tarea]?
+  - Necesito una estimacion basada en proyectos anteriores similares a la [tarea]
+
+
+- intent: persona_tarea
+  examples: |
+  - Cual es la persona mas adecuada para realizar [tarea]?
+  - Quien es el mejor para realizar la tarea [tarea]?
+  - Cual es la persona mas adecuada para realizar [tarea]?
+  - Quien es el mejor para realizar la tarea [tarea]?
+  - Quien es idoneo para hacer [tarea]?
+  - A quien debería asignar la [tarea]?
+  - Cual es el experto en [tarea]?
+  - Quien tiene experiencia en [tarea]?
+  - Quien es la mejor opción para [tarea]?
+  - Cual es el miembro del equipo más apto para [tarea]?
+  - Quien es el más capacitado para [tarea]?
+  - A quien debería asignar la responsabilidad de [tarea]?
+  - Cual es el perfil adecuado para [tarea]?
+  - Quien tiene habilidades para [tarea]?
+  - Quien es el más indicado para [tarea]?
+  - Cual es la persona más idónea para llevar a cabo [tarea]?
+#Ejemplos sin entidad tarea
+  - Cual es la persona mas adecuada para realizar?
+  - Quien es el mejor para realizar la tarea?
+  - Cual es la persona mas adecuada para realizar?
+  - Quien es el mejor para realizar la tarea?
+  - Quien es idoneo para hacer?
+  - A quien debería asignar?
+  - Cual es el experto?
+  - Quien tiene experiencia?
+  - Quien es la mejor opción?
+  - Cual es el miembro del equipo más apto?
+  - Quien es el más capacitado?
+  - A quien debería asignar la responsabilidad?
+  - Cual es el perfil adecuado?
+  - Quien tiene habilidades?
+  - Quien es el más indicado?
+  - Cual es la persona más idónea para llevar a cabo la tarea?

@@ -1,0 +1,32 @@
+version: "3.1"
+
+stories:
+
+- story: camino_principal
+  steps:
+  - intent: presentarse
+  - action: guardar_nombre
+  - checkpoint: check_siguiente
+
+- story: camino_estimacion_tarea
+  steps:
+  - checkpoint: check_siguiente
+  - intent: estimacion_tarea
+  - action: dar_motivo_estimacion
+  - checkpoint: check_siguiente
+
+- story: camino_persona_tarea
+  steps:
+  - checkpoint: check_siguiente
+  - intent: persona_tarea
+  - action: dar_motivo_persona
+  - checkpoint: check_siguiente
+
+- story: camino_participante_no_valido
+  steps:
+  - checkpoint: check_siguiente
+  - intent: despedir
+  - action: utter_despedir
+
+
+
