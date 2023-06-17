@@ -28,9 +28,9 @@ from datetime import datetime
 from sqlalchemy import case, false, true
 
 tarea = None
-
-#
-#
+motivoEstimacion = ""
+motivoPersona = ""
+estimacionHora = 8 #Constante utilizada para determinar cuando vale un punto es relacion a horas. En nuestro caso 1 punto vale 8 horas.
 
 def readArchivo(dire)-> dict:
         with open(dire,"r") as archivo:
@@ -43,15 +43,16 @@ def writeArchivo(dire,diccionario):
             json.dump(diccionario,archivo)
             archivo.close()
 
-api_endpoint_set_vector = "http://IP/dispatcher/set-vector"
-api_endpoint_get_vector = "http://IP/dispatcher/get-vector"
+ip = "9af0-201-235-167-187.ngrok-free.app"
+api_endpoint_get_recomendacion = f"http://{ip}/dispatcher/get-recomendacion"
+api_endpoint_get_vector = f"http://{ip}/dispatcher/get-vector"
 diccionarioParticipantes = ""
 direcDatos = "actions/motivo.json"
-diccionarioDatos = readArchivo(direcDatos) #Ya no se lee aca, se siempre que se usa el diccionario por si se actualiza en tiempo de ejecucion
+#diccionarioDatos = readArchivo(direcDatos) #Ya no se lee aca, se siempre que se usa el diccionario por si se actualiza en tiempo de ejecucion
+diccionarioDatos = ""
 
 def existeParticipante(nombre_participante) -> bool:
     response = requests.get(url=api_endpoint_get_vector).text
-    #print("response: " + response)
     diccionarioParticipantes = json.loads(response)
     for participante in diccionarioParticipantes:
         if (participante["nickname"] == nombre_participante):
@@ -63,11 +64,11 @@ class ActionGuardarNombre(Action):
     def name(self) -> Text:
         return "guardar_nombre"
     
-    def obtenerSaludoHora() -> Text:
+    def obtenerSaludoHora(self) -> Text:
         hora_actual = datetime.now().hour
-        if hora_actual >= 6 and hora_actual < 12:
+        if hora_actual >= 1 and hora_actual < 12:
             return "Buenos días"
-        elif hora_actual >= 12 and hora_actual < 18:
+        elif hora_actual >= 12 and hora_actual < 20:
             return "Buenas tardes"
         else:
             return "Buenas noches"  
@@ -75,7 +76,7 @@ class ActionGuardarNombre(Action):
     def generarIntroduccion(self, nombre_partipante) -> Text:
         #Se generan distintas introducciones que el chatbot mencionara.
         lista_introduccion = []
-        introduccion = f"{self.obtenerSaludoHora} {nombre_partipante}"
+        introduccion = f"{self.obtenerSaludoHora()} {nombre_partipante}"
         ejemplo1 = f"{introduccion}, puedo ayudarte en estimar una tarea o mencionarte la persona mas indicada para la misma, consultame!"
         ejemplo2 = f"{introduccion}, estoy aqui para ayudarte. Puedes consultarme acerca de la estimacion de tareas o preguntarme quien es la persona mas indicada para realizar una tarea especifica."
         ejemplo3 = f"{introduccion}, si necesitas estimar el tiempo necesario para completar una tarea o encontrar a la persona adecuada para realizarla, puedo ayudarte!"
@@ -106,59 +107,189 @@ class ActionGuardarNombre(Action):
             dispatcher.utter_message(text=message)
         return [SlotSet("participante",str(nombre_partipante))]
     
+def AsignarJsonDatos():
+    global diccionarioDatos
+    #response = requests.post(url=api_endpoint_get_recomendacion, json= {
+    #"tarea": "realizar request a la base de datos con python",
+    #"area": "base de datos",
+    #"lenguaje": "python"
+#}).text
+    #diccionarioDatos = json.loads(response)
+    diccionarioDatos = ""
+    diccionarioDatos = readArchivo(direcDatos)
+    print("diccionarioDatos: " + str(diccionarioDatos))
+    print("PRINT PRUEBA: " + str(diccionarioDatos["historicos"]))
+    print("PRINT PRUEBA1: " + str(diccionarioDatos["historicos"][0]["ejecutor"]))
+    print("PRINT PRUEBA2: " + str(diccionarioDatos["historicos"][0]["lenguaje"]))
 
 def asignarTarea(tracker)-> bool:
     #Obtengo la tarea de la entidad, en caso de no cargarse, la obtengo del slot. En caso contrario retorno false.
-    global tarea
+    global tarea, diccionarioDatos, motivoEstimacion, motivoPersona
     tarea = next (tracker.get_latest_entity_values("tarea"),None)
+    print(tarea)
     if (tarea != None):
+            AsignarJsonDatos()
             return true
     else:
         tarea = str(tracker.get_slot("participante"))
         if (tarea != None):
+            AsignarJsonDatos()
             return true
-        else: return false
+        else: 
+            return false
+        
+def seleccionarHistoricos(valor_maximo):
+    valores = random.sample(range(valor_maximo), 2)
+    return valores[0], valores[1]
+    
+def leerDatosHistoricos(posicion, tarea, ejecutor, puntos):
+    if len(diccionarioDatos["historicos"]) > posicion:
+        tarea = diccionarioDatos["historicos"][posicion]["tarea"]
+        ejecutor = diccionarioDatos["historicos"][posicion]["ejecutor"]
+        puntos = diccionarioDatos["historicos"][posicion]["puntos"]
+        return tarea, ejecutor, puntos
+    else:
+        return false
+
+def generarMotivos():
+    #CHEQUEAR TILDES
+    global tarea, diccionarioDatos, motivoEstimacion, motivoPersona
+    if motivoEstimacion == "" or motivoPersona == "": #Si algun motivo es ""
+        historico_tarea = ""
+        historico_ejecutor = ""
+        historico_puntos = ""
+        lista_comparacionPersonas = []
+        lista_motivosEstimacion = []
+        lista_motivosPersona = []
+        historico_tarea, historico_ejecutor, historico_puntos = leerDatosHistoricos(0, historico_tarea, historico_ejecutor, historico_puntos)
+        if historico_tarea == "" and historico_ejecutor == "" and historico_puntos == "": #Si no hay datos
+            motivoEstimacion1 = "No hay datos suficientes para estimar la tarea mencionada."
+            motivoEstimacion2 = "No se dispone de información necesaria para estimar la duración de la tarea."
+            motivoEstimacion3 = "La falta de datos impide realizar una estimación precisa para la tarea mencionada."
+            motivoEstimacion4 = "No se puede calcular la duración estimada debido a la falta de datos pertinentes."
+            motivoEstimacion5 = "La ausencia de información adecuada dificulta la estimación de la tarea en cuestión."
+
+            motivoPersona1 = "No hay datos suficientes para recomendar a alguien a la tarea mencionada."
+            motivoPersona2 = "La falta de información impide realizar una recomendación adecuada para la tarea mencionada."
+            motivoPersona3 = "No se dispone de datos suficientes para recomendar a alguien para la tarea mencionada."
+            motivoPersona4 = "La tarea mencionada carece de información necesaria para hacer una recomendación."
+            motivoPersona5 = "La falta de datos pertinentes dificulta la recomendación de alguien para la tarea mencionada."
+
+        elif historico_tarea == tarea: #Si la tarea ya fue realizada
+            motivoEstimacion1 = f"La tarea ingresada ya fue realizada anteriormente por {historico_ejecutor}, con una demora de {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
+            motivoEstimacion2 = f"La solicitud de trabajo coincide con una tarea previa realizada por {historico_ejecutor}, quien tardo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas, en completarla."
+            motivoEstimacion3 = f"Segun los registros, {historico_ejecutor} ya ha abordado esa tarea y demoro {historico_puntos} puntos para completarla, es decir {historico_puntos * estimacionHora} horas."
+            motivoEstimacion4 = f"Esta tarea ya fue anteriormente realizada por {historico_ejecutor}, quien se retardo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas, para su finalización."
+            motivoEstimacion5 = f"El solicitante {historico_ejecutor} ya ha llevado a cabo una tarea identica, tardando alrededor de {historico_puntos} puntos para finalizarla, lo equivalente a {historico_puntos * estimacionHora} horas."
+
+            motivoPersona1 = f"Recomiendo a {historico_ejecutor}, ya que realizo la tarea ingresada anteriormente, tardando {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
+            motivoPersona2 = f"Te sugiero a {historico_ejecutor} para esta tarea, ya que ha completado exitosamente el trabajo previo en un tiempo de {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
+            motivoPersona3 = f"Basado en el historial de ejecución, te recomiendo encarecidamente a {historico_ejecutor}. En la tarea anterior, demostró su experiencia al finalizarla con una estimación precisa de {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
+            motivoPersona4 = f"Para esta tarea, te recomendaría a {historico_ejecutor} sin dudarlo. En la ocasión anterior, demostró un alto nivel de dedicación y esfuerzo, completando la tarea en {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
+            motivoPersona5 = f"Mi recomendación es asignar a {historico_ejecutor} para esta tarea. En la tarea anterior, mostró habilidades excepcionales y logró completarla con éxito en tan solo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
+        else:
+            estimacion = diccionarioDatos["promedio_puntos"]
+            if len(diccionarioDatos["historicos"]) > 1:
+                #Se eligen dos historicos aleatorios del total
+                pos1, pos2 = seleccionarHistoricos(len(diccionarioDatos["historicos"]))
+                historico_tarea1 = ""
+                historico_ejecutor1 = ""
+                historico_puntos1 = ""
+                historico_tarea2 = ""
+                historico_ejecutor2 = ""
+                historico_puntos2 = ""
+                historico_tarea1, historico_ejecutor1, historico_puntos1 = leerDatosHistoricos(pos1, historico_tarea1, historico_ejecutor1, historico_puntos1)
+                historico_tarea2, historico_ejecutor2, historico_puntos2 = leerDatosHistoricos(pos2, historico_tarea2, historico_ejecutor2, historico_puntos2)
+                motivo_tarea_similar1 = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos, realizada por {historico_ejecutor1}"
+                motivo_tarea_similar2 = f"{historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
+
+                motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
+                motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, propongo estimar la nueva tarea con {estimacion} puntos."
+                motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, sugiero una estimación de {estimacion} puntos para la tarea actual."
+                motivoEstimacion4 = f"Basándome en el desempeño en tareas anteriores, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, creo que una estimación de {estimacion} puntos sería apropiada para la nueva tarea."
+                motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, considero razonable asignar una estimación de {estimacion} puntos a la tarea actual."
+
+                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2}, podrian resolver perfectamente la nueva tarea."
+                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} demostraron habilidades sobresalientes y podrían resolver perfectamente la nueva tarea."
+                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado competencia y podrían abordar con éxito la nueva tarea."
+                motivoPersona4 = f"Basándome en el desempeño en tareas anteriores, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} se destacaron por su eficiencia y podrían resolver perfectamente la nueva tarea."
+                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado habilidades excepcionales y podrían abordar la nueva tarea con éxito."
+            
+                if historico_puntos1 != historico_puntos2:
+                    if historico_puntos1 > historico_puntos2: #Si una persona resolvio mas rapido una tarea que otra.
+                        motivoComparacionPersonas1 = f"Aunque ambos ejecutores son competentes, me inclino a recomendar a {historico_ejecutor1} debido a su desempeño notablemente más rápido en tareas similares anteriores. Su eficiencia demostrada podría garantizar una entrega oportuna de la nueva tarea."
+                        motivoComparacionPersonas2 = f"Sin embargo, mi recomendación principal es {historico_ejecutor1}, ya que demostró ser más eficiente en el tiempo empleado."
+                        motivoComparacionPersonas3 = f"No obstante, te sugiero especialmente a {historico_ejecutor1}, quien completó la tarea en un tiempo menor, mostrando una mayor capacidad de entrega."
+                        motivoComparacionPersonas4 = f"A pesar de eso, mi preferencia recae en {historico_ejecutor1}, ya que ha demostrado un rendimiento más rápido y efectivo en tareas similares anteriores."
+                        motivoComparacionPersonas5 = f"Sin embargo, mi recomendación principal es asignar la tarea a {historico_ejecutor1}, quien logró terminarla en menos tiempo, lo que indica una mayor eficiencia en su trabajo."
+                    else:
+                        motivoComparacionPersonas1 = f"Aunque ambos ejecutores son competentes, me inclino a recomendar a {historico_ejecutor2} debido a su desempeño notablemente más rápido en tareas similares anteriores. Su eficiencia demostrada podría garantizar una entrega oportuna de la nueva tarea."
+                        motivoComparacionPersonas2 = f"Sin embargo, mi recomendación principal es {historico_ejecutor2}, ya que demostró ser más eficiente en el tiempo empleado."
+                        motivoComparacionPersonas3 = f"No obstante, te sugiero especialmente a {historico_ejecutor2}, quien completó la tarea en un tiempo menor, mostrando una mayor capacidad de entrega."
+                        motivoComparacionPersonas4 = f"A pesar de eso, mi preferencia recae en {historico_ejecutor2}, ya que ha demostrado un rendimiento más rápido y efectivo en tareas similares anteriores."
+                        motivoComparacionPersonas5 = f"Sin embargo, mi recomendación principal es asignar la tarea a {historico_ejecutor2}, quien logró terminarla en menos tiempo, lo que indica una mayor eficiencia en su trabajo."
+                    
+                    lista_comparacionPersonas = [motivoComparacionPersonas1, motivoComparacionPersonas2, motivoComparacionPersonas3, motivoComparacionPersonas4, motivoComparacionPersonas5]
+                    motivoComparacionPersonas =  random.choice(lista_comparacionPersonas)
+                    motivoPersona1 = f"{motivoPersona1} {motivoComparacionPersonas}"
+                    motivoPersona2 = f"{motivoPersona2} {motivoComparacionPersonas}"
+                    motivoPersona3 = f"{motivoPersona3} {motivoComparacionPersonas}"
+                    motivoPersona4 = f"{motivoPersona4} {motivoComparacionPersonas}"
+                    motivoPersona5 = f"{motivoPersona5} {motivoComparacionPersonas}"
+            else:
+                print("historico_tarea: " + str(historico_tarea))
+                motivo_tarea_similar = f"{historico_tarea} con una estimacion de {historico_puntos} puntos, realizada por {historico_ejecutor}"
+                motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
+                motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, propongo estimar la nueva tarea con {estimacion} puntos."
+                motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, sugiero una estimación de {estimacion} puntos para la tarea actual."
+                motivoEstimacion4 = f"Basándome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, creo que una estimación de {estimacion} puntos sería apropiada para la nueva tarea."
+                motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, considero razonable asignar una estimación de {estimacion} puntos a la tarea actual."
+
+                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, {historico_ejecutor}, podria resolver perfectamente la nueva tarea."
+                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, {historico_ejecutor} demostro habilidades sobresalientes y podrían resolver perfectamente la nueva tarea."
+                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, {motivo_tarea_similar}, {historico_ejecutor} ha demostrado competencia y podrían abordar con éxito la nueva tarea."
+                motivoPersona4 = f"Basándome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, {historico_ejecutor} se destaco por su eficiencia y podrían resolver perfectamente la nueva tarea."
+                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, {historico_ejecutor} ha demostrado habilidades excepcionales y podrían abordar la nueva tarea con éxito."
+                
+        lista_motivosEstimacion = [motivoEstimacion1, motivoEstimacion2, motivoEstimacion3, motivoEstimacion4, motivoEstimacion5]
+        lista_motivosPersona = [motivoPersona1, motivoPersona2, motivoPersona3, motivoPersona4, motivoPersona5]
+        motivoEstimacion =  random.choice(lista_motivosEstimacion)
+        motivoPersona =  random.choice(lista_motivosPersona)
+
     
 class ActionDarMotimoEstimacion(Action):
 
     def name(self) -> Text:
         return "dar_motivo_estimacion"
-
-    def aproximarVotoEstimacion(self, valor) -> int:
-        lista_votos = [0, 0.5, 1, 2, 3, 5, 8, 20, 40, 100, 1000] #No puedo usar la definida al principio porque es de strings.
-        voto_aproximado = min(lista_votos, key=lambda v: abs(v - valor)) #La función lambda calcula la distancia absoluta entre cada voto v y valor, y min() encuentra el voto con la distancia mínima.
-        return voto_aproximado
-    
-    def generarMotivoEstimacion(self) -> Text:
+        
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         global tarea
-        motivo = ""
-        if diccionarioDatos["tareas_similares"][0] == "":
-            motivo = "No hay datos suficientes para estimar la tarea mencionada."
-        elif diccionarioDatos["tareas_similares"][0] == tarea:
-            autor_tarea = diccionarioDatos["tareas_similares"][0]["autor"]
-            estimacion = diccionarioDatos["tareas_similares"][0]["estimacion"]
-            motivo = f"La tarea ingresada ya fue realizada anteriormente por {autor_tarea}, con una estimacion de {estimacion} puntos."
+        message = ""
+        if asignarTarea(tracker):
+            tarea_recibida = next(tracker.get_latest_entity_values("tarea"), None)
+            print(tarea_recibida)
+            if tarea_recibida != None: #Si recibio una tarea nueva
+                generarMotivos()
+            message = motivoEstimacion #Ya hay una respuesta cargada
         else:
-            tarea_similar1 = diccionarioDatos["tareas_similares"][0]["tarea"]
-            estimacion_tarea_similar1 = diccionarioDatos["tareas_similares"][0]["estimacion"]
-            autor_tarea_similar1 = diccionarioDatos["tareas_similares"][0]["autor"]
-            motivo_tarea_similar1 = f"{tarea_similar1} con una estimacion de {estimacion_tarea_similar1} puntos, realizada por {autor_tarea_similar1}"
-            if diccionarioDatos["tareas_similares"][1] != "":
-                tarea_similar2 = diccionarioDatos["tareas_similares"][1]["tarea"]
-                estimacion_tarea_similar2 = diccionarioDatos["tareas_similares"][1]["estimacion"]
-                autor_tarea_similar2 = diccionarioDatos["tareas_similares"][0]["autor"]
-                motivo_tarea_similar2 = f"{tarea_similar2} con una estimacion de {estimacion_tarea_similar2} puntos, realizada por {autor_tarea_similar2}"
-                motivo = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar1} y {motivo_tarea_similar2}"
-            else:
-                motivo = f"Basandome en la tareas realizada anteriormente {motivo_tarea_similar1}"
-            estimacion = self.aproximarVotoEstimacion(diccionarioDatos["promedio"])
-            motivo = f"{motivo}, me parece correcto que la tarea se estime con un puntaje de {estimacion}"
+            message = "Debe indicarme la tarea a la cual desea estimar"
+        dispatcher.utter_message(text=message)
+        return [SlotSet("tarea",str(tarea))]
+    
+class ActionDarMotimoPersona(Action):
+
+    def name(self) -> Text:
+        return "dar_motivo_persona"
         
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         message = ""
         if asignarTarea(tracker):
-            message = self.generarMotivoEstimacion()
+            tarea_recibida = next(tracker.get_latest_entity_values("tarea"), None)
+            print(tarea_recibida)
+            if tarea_recibida != None: #Si recibio una tarea nueva
+                generarMotivos()
+            message = motivoPersona #Ya hay una respuesta cargada
         else:
             message = "Debe indicarme la tarea a la cual desea estimar"
         dispatcher.utter_message(text=message)

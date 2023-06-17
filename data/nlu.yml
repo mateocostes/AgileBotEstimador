@@ -63,56 +63,71 @@ nlu:
 
 - intent: estimacion_tarea
   examples: |
-  - Quisiera una estimacion para la tarea [tarea]
-  - Cuanto tiempo tomara completar la [tarea]?
-  - Necesito una estimacion para la tarea [tarea]
-  - Puedes darme una estimacion de tiempo para la [tarea]?
-  - Me gustaria saber cuanto tiempo tomara completar la [tarea]
-  - Quiero una estimación para la tarea [tarea]
-  - Cuanto tiempo se tardo en proyectos anteriores similares a la [tarea]?
-  - Necesito una estimacion de tiempo para la [tarea] basada en casos anteriores
-  - Cual es la duración promedio de la [tarea] en proyectos similares?
-  - Estoy buscando una estimacion de tiempo para la [tarea]
-  - Podrias decirme cuanto tiempo llevara realizar la [tarea]?
-  - Cuanto tiempo estimas que llevara completar la [tarea]?
-  - Puedes darme una estimacion aproximada para la [tarea]?
-  - Me gustaria saber cuanto esfuerzo se necesita para la [tarea]
-  - Cuanto tiempo tomara en promedio realizar la [tarea]?
-  - Necesito una estimacion basada en proyectos anteriores similares a la [tarea]
+    - Quisiera una estimacion para la tarea [Implementacion de funcion en Python](tarea)
+    - Cuanto tiempo tomara completar [Agregar autenticacion con algun servicio](tarea)?
+    - Necesito una estimacion para la tarea [Crear tabla en SQL](tarea)
+    - Puedes darme una estimacion de tiempo para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Me gustaria saber cuanto tiempo tomara completar [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Quiero una estimación para la tarea [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Creacion de chatbot en Rasa](tarea)?
+    - Necesito una estimacion de tiempo para [Realizar test automatizados para DataManager](tarea) basada en casos anteriores
+    - Cual es la duración promedio de [Realizar presentacion para el cliente](tarea) en proyectos similares?
+    - Estoy buscando una estimacion de tiempo para [Traducir textos en ingles](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Refactorizar clases del proyecto](tarea)?
+    - Cuanto tiempo estimas que llevara completar [Realizar request en python a la base de datos](tarea)?
+    - Puedes darme una estimacion aproximada para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Me gustaria saber cuanto esfuerzo se necesita para [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Arreglar bugs en UI](tarea)?
+    - Necesito una estimacion basada en proyectos anteriores similares a [Implementar realidad virtual al entorno](tarea)
+    - Quisiera una estimacion para la tarea mencionada
+    - Cuanto tiempo tomara completar la tarea?
+    - Necesito una estimacion para la tarea
+    - Puedes darme una estimacion de tiempo para la tarea?
+    - Me gustaria saber cuanto tiempo tomara completar la tarea
+    - Quiero una estimación para la tarea
+    - Cuanto tiempo se tardo en proyectos anteriores similares a la tarea?
+    - Necesito una estimacion de tiempo para la tarea basada en casos anteriores
+    - Cual es la duración promedio de la tarea en proyectos similares?
+    - Estoy buscando una estimacion de tiempo para la tarea
+    - Podrias decirme cuanto tiempo llevara realizar la tarea?
+    - Cuanto tiempo estimas que llevara completar la tarea?
+    - Puedes darme una estimacion aproximada para la tarea?
+    - Me gustaria saber cuanto esfuerzo se necesita para la tarea
+    - Cuanto tiempo tomara en promedio realizar la tarea?
+    - Necesito una estimacion basada en proyectos anteriores similares a la tarea
 
 
 - intent: persona_tarea
   examples: |
-  - Cual es la persona mas adecuada para realizar [tarea]?
-  - Quien es el mejor para realizar la tarea [tarea]?
-  - Cual es la persona mas adecuada para realizar [tarea]?
-  - Quien es el mejor para realizar la tarea [tarea]?
-  - Quien es idoneo para hacer [tarea]?
-  - A quien debería asignar la [tarea]?
-  - Cual es el experto en [tarea]?
-  - Quien tiene experiencia en [tarea]?
-  - Quien es la mejor opción para [tarea]?
-  - Cual es el miembro del equipo más apto para [tarea]?
-  - Quien es el más capacitado para [tarea]?
-  - A quien debería asignar la responsabilidad de [tarea]?
-  - Cual es el perfil adecuado para [tarea]?
-  - Quien tiene habilidades para [tarea]?
-  - Quien es el más indicado para [tarea]?
-  - Cual es la persona más idónea para llevar a cabo [tarea]?
-#Ejemplos sin entidad tarea
-  - Cual es la persona mas adecuada para realizar?
-  - Quien es el mejor para realizar la tarea?
-  - Cual es la persona mas adecuada para realizar?
-  - Quien es el mejor para realizar la tarea?
-  - Quien es idoneo para hacer?
-  - A quien debería asignar?
-  - Cual es el experto?
-  - Quien tiene experiencia?
-  - Quien es la mejor opción?
-  - Cual es el miembro del equipo más apto?
-  - Quien es el más capacitado?
-  - A quien debería asignar la responsabilidad?
-  - Cual es el perfil adecuado?
-  - Quien tiene habilidades?
-  - Quien es el más indicado?
-  - Cual es la persona más idónea para llevar a cabo la tarea?
+    - Cual es la persona mas adecuada para realizar [Crear tabla en SQL](tarea)?
+    - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien es idoneo para hacer [Creacion de chatbot en Rasa](tarea)?
+    - A quien debería asignar [Implementacion de funcion en Python](tarea)?
+    - Cual es el experto en [Agregar autenticacion con algun servicio](tarea)?
+    - Quien tiene experiencia en [Traducir textos en ingles](tarea)?
+    - Quien es la mejor opción para [Implementar text-to-speech y speech-to-text](tarea)?
+    - Cual es el miembro del equipo más apto para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien es el más capacitado para [Identificar tareas triviales en el planeamiento](tarea)?
+    - A quien debería asignar la responsabilidad de [Realizar animaciones de los modelos](tarea)?
+    - Cual es el perfil adecuado para [Implementacion de funcion en Python](tarea)?
+    - Quien tiene habilidades para [Realizar request en python a la base de datos](tarea)?
+    - Quien es el más indicado para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Cual es la persona mas adecuada para realizar?
+    - Quien es el mejor para realizar la tarea?
+    - Cual es la persona mas adecuada para realizar?
+    - Quien es el mejor para realizar la tarea?
+    - Quien es idoneo para hacer?
+    - A quien debería asignar?
+    - Cual es el experto?
+    - Quien tiene experiencia?
+    - Quien es la mejor opción?
+    - Cual es el miembro del equipo más apto?
+    - Quien es el más capacitado?
+    - A quien debería asignar la responsabilidad?
+    - Cual es el perfil adecuado?
+    - Quien tiene habilidades?
+    - Quien es el más indicado?
+    - Cual es la persona más idónea para llevar a cabo la tarea?
