@@ -63,22 +63,342 @@ nlu:
 
 - intent: estimacion_tarea
   examples: |
+    - Quisiera una estimacion para la tarea [Crear tabla en SQL](tarea)
+    - Quisiera una estimacion para la tarea [Mejora del funcionamiento del script BotMovement](tarea)
+    - Quisiera una estimacion para la tarea [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Quisiera una estimacion para la tarea [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Quisiera una estimacion para la tarea [Creacion de chatbot en Rasa](tarea)
     - Quisiera una estimacion para la tarea [Implementacion de funcion en Python](tarea)
-    - Cuanto tiempo tomara completar [Agregar autenticacion con algun servicio](tarea)?
+    - Quisiera una estimacion para la tarea [Agregar autenticacion con algun servicio](tarea)
+    - Quisiera una estimacion para la tarea [Realizar test automatizados para DataManager](tarea)
+    - Quisiera una estimacion para la tarea [Realizar presentacion para el cliente](tarea)
+    - Quisiera una estimacion para la tarea [Traducir textos en ingles](tarea)
+    - Quisiera una estimacion para la tarea [Refactorizar clases del proyecto](tarea)
+    - Quisiera una estimacion para la tarea [Implementar text-to-speech y speech-to-text](tarea)
+    - Quisiera una estimacion para la tarea [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Quisiera una estimacion para la tarea [Testear demo para futura presentacion](tarea)
+    - Quisiera una estimacion para la tarea [Identificar tareas triviales en el planeamiento](tarea)
+    - Quisiera una estimacion para la tarea [Implementar realidad virtual al entorno](tarea)
+    - Quisiera una estimacion para la tarea [Realizar animaciones de los modelos](tarea)
+    - Quisiera una estimacion para la tarea [Arreglar bugs en UI](tarea)
+    - Quisiera una estimacion para la tarea [Realizar request en python a la base de datos](tarea)
+    - Quisiera una estimacion para la tarea [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Quisiera una estimacion para la tarea [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Cuanto tiempo tomara completar [Crear tabla en SQL](tarea)
+    - Cuanto tiempo tomara completar [Mejora del funcionamiento del script BotMovement](tarea)
+    - Cuanto tiempo tomara completar [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Cuanto tiempo tomara completar [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Cuanto tiempo tomara completar [Creacion de chatbot en Rasa](tarea)
+    - Cuanto tiempo tomara completar [Implementacion de funcion en Python](tarea)
+    - Cuanto tiempo tomara completar [Agregar autenticacion con algun servicio](tarea)
+    - Cuanto tiempo tomara completar [Realizar test automatizados para DataManager](tarea)
+    - Cuanto tiempo tomara completar [Realizar presentacion para el cliente](tarea)
+    - Cuanto tiempo tomara completar [Traducir textos en ingles](tarea)
+    - Cuanto tiempo tomara completar [Refactorizar clases del proyecto](tarea)
+    - Cuanto tiempo tomara completar [Implementar text-to-speech y speech-to-text](tarea)
+    - Cuanto tiempo tomara completar [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Cuanto tiempo tomara completar [Testear demo para futura presentacion](tarea)
+    - Cuanto tiempo tomara completar [Identificar tareas triviales en el planeamiento](tarea)
+    - Cuanto tiempo tomara completar [Implementar realidad virtual al entorno](tarea)
+    - Cuanto tiempo tomara completar [Realizar animaciones de los modelos](tarea)
+    - Cuanto tiempo tomara completar [Arreglar bugs en UI](tarea)
+    - Cuanto tiempo tomara completar [Realizar request en python a la base de datos](tarea)
+    - Cuanto tiempo tomara completar [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Cuanto tiempo tomara completar [Refactorizar codigo del proyecto de back-end en Java](tarea)
     - Necesito una estimacion para la tarea [Crear tabla en SQL](tarea)
-    - Puedes darme una estimacion de tiempo para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Necesito una estimacion para la tarea [Mejora del funcionamiento del script BotMovement](tarea)
+    - Necesito una estimacion para la tarea [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Necesito una estimacion para la tarea [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Necesito una estimacion para la tarea [Creacion de chatbot en Rasa](tarea)
+    - Necesito una estimacion para la tarea [Implementacion de funcion en Python](tarea)
+    - Necesito una estimacion para la tarea [Agregar autenticacion con algun servicio](tarea)
+    - Necesito una estimacion para la tarea [Realizar test automatizados para DataManager](tarea)
+    - Necesito una estimacion para la tarea [Realizar presentacion para el cliente](tarea)
+    - Necesito una estimacion para la tarea [Traducir textos en ingles](tarea)
+    - Necesito una estimacion para la tarea [Refactorizar clases del proyecto](tarea)
+    - Necesito una estimacion para la tarea [Implementar text-to-speech y speech-to-text](tarea)
+    - Necesito una estimacion para la tarea [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Necesito una estimacion para la tarea [Testear demo para futura presentacion](tarea)
+    - Necesito una estimacion para la tarea [Identificar tareas triviales en el planeamiento](tarea)
+    - Necesito una estimacion para la tarea [Implementar realidad virtual al entorno](tarea)
+    - Necesito una estimacion para la tarea [Realizar animaciones de los modelos](tarea)
+    - Necesito una estimacion para la tarea [Arreglar bugs en UI](tarea)
+    - Necesito una estimacion para la tarea [Realizar request en python a la base de datos](tarea)
+    - Necesito una estimacion para la tarea [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Necesito una estimacion para la tarea [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Puedes darme una estimacion de tiempo para [Crear tabla en SQL](tarea)
+    - Puedes darme una estimacion de tiempo para [Mejora del funcionamiento del script BotMovement](tarea)
+    - Puedes darme una estimacion de tiempo para [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Puedes darme una estimacion de tiempo para [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Puedes darme una estimacion de tiempo para [Creacion de chatbot en Rasa](tarea)
+    - Puedes darme una estimacion de tiempo para [Implementacion de funcion en Python](tarea)
+    - Puedes darme una estimacion de tiempo para [Agregar autenticacion con algun servicio](tarea)
+    - Puedes darme una estimacion de tiempo para [Realizar test automatizados para DataManager](tarea)
+    - Puedes darme una estimacion de tiempo para [Realizar presentacion para el cliente](tarea)
+    - Puedes darme una estimacion de tiempo para [Traducir textos en ingles](tarea)
+    - Puedes darme una estimacion de tiempo para [Refactorizar clases del proyecto](tarea)
+    - Puedes darme una estimacion de tiempo para [Implementar text-to-speech y speech-to-text](tarea)
+    - Puedes darme una estimacion de tiempo para [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Puedes darme una estimacion de tiempo para [Testear demo para futura presentacion](tarea)
+    - Puedes darme una estimacion de tiempo para [Identificar tareas triviales en el planeamiento](tarea)
+    - Puedes darme una estimacion de tiempo para [Implementar realidad virtual al entorno](tarea)
+    - Puedes darme una estimacion de tiempo para [Realizar animaciones de los modelos](tarea)
+    - Puedes darme una estimacion de tiempo para [Arreglar bugs en UI](tarea)
+    - Puedes darme una estimacion de tiempo para [Realizar request en python a la base de datos](tarea)
+    - Puedes darme una estimacion de tiempo para [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Puedes darme una estimacion de tiempo para [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Crear tabla en SQL](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Mejora del funcionamiento del script BotMovement](tarea)
     - Me gustaria saber cuanto tiempo tomara completar [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Creacion de chatbot en Rasa](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Implementacion de funcion en Python](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Agregar autenticacion con algun servicio](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Realizar test automatizados para DataManager](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Realizar presentacion para el cliente](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Traducir textos en ingles](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Refactorizar clases del proyecto](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Implementar text-to-speech y speech-to-text](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Testear demo para futura presentacion](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Identificar tareas triviales en el planeamiento](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Implementar realidad virtual al entorno](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Realizar animaciones de los modelos](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Arreglar bugs en UI](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Realizar request en python a la base de datos](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Me gustaria saber cuanto tiempo tomara completar [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Quiero una estimación para la tarea [Crear tabla en SQL](tarea)
+    - Quiero una estimación para la tarea [Mejora del funcionamiento del script BotMovement](tarea)
+    - Quiero una estimación para la tarea [Mejora del funcionamiento del script Notifier en Unity](tarea)
     - Quiero una estimación para la tarea [Mejora del funcionamiento del script Calculador de Java](tarea)
-    - Cuanto tiempo se tardo en proyectos anteriores similares a [Creacion de chatbot en Rasa](tarea)?
-    - Necesito una estimacion de tiempo para [Realizar test automatizados para DataManager](tarea) basada en casos anteriores
-    - Cual es la duración promedio de [Realizar presentacion para el cliente](tarea) en proyectos similares?
+    - Quiero una estimación para la tarea [Creacion de chatbot en Rasa](tarea)
+    - Quiero una estimación para la tarea [Implementacion de funcion en Python](tarea)
+    - Quiero una estimación para la tarea [Agregar autenticacion con algun servicio](tarea)
+    - Quiero una estimación para la tarea [Realizar test automatizados para DataManager](tarea)
+    - Quiero una estimación para la tarea [Realizar presentacion para el cliente](tarea)
+    - Quiero una estimación para la tarea [Traducir textos en ingles](tarea)
+    - Quiero una estimación para la tarea [Refactorizar clases del proyecto](tarea)
+    - Quiero una estimación para la tarea [Implementar text-to-speech y speech-to-text](tarea)
+    - Quiero una estimación para la tarea [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Quiero una estimación para la tarea [Testear demo para futura presentacion](tarea)
+    - Quiero una estimación para la tarea [Identificar tareas triviales en el planeamiento](tarea)
+    - Quiero una estimación para la tarea [Implementar realidad virtual al entorno](tarea)
+    - Quiero una estimación para la tarea [Realizar animaciones de los modelos](tarea)
+    - Quiero una estimación para la tarea [Arreglar bugs en UI](tarea)
+    - Quiero una estimación para la tarea [Realizar request en python a la base de datos](tarea)
+    - Quiero una estimación para la tarea [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Quiero una estimación para la tarea [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Crear tabla en SQL](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Mejora del funcionamiento del script BotMovement](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Creacion de chatbot en Rasa](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Implementacion de funcion en Python](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Agregar autenticacion con algun servicio](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Realizar test automatizados para DataManager](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Realizar presentacion para el cliente](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Traducir textos en ingles](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Refactorizar clases del proyecto](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Implementar text-to-speech y speech-to-text](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Testear demo para futura presentacion](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Identificar tareas triviales en el planeamiento](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Implementar realidad virtual al entorno](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Realizar animaciones de los modelos](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Arreglar bugs en UI](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Realizar request en python a la base de datos](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Cuanto tiempo se tardo en proyectos anteriores similares a [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Necesito una estimacion de tiempo para [Crear tabla en SQL](tarea)
+    - Necesito una estimacion de tiempo para [Mejora del funcionamiento del script BotMovement](tarea)
+    - Necesito una estimacion de tiempo para [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Necesito una estimacion de tiempo para [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Necesito una estimacion de tiempo para [Creacion de chatbot en Rasa](tarea)
+    - Necesito una estimacion de tiempo para [Implementacion de funcion en Python](tarea)
+    - Necesito una estimacion de tiempo para [Agregar autenticacion con algun servicio](tarea)
+    - Necesito una estimacion de tiempo para [Realizar test automatizados para DataManager](tarea)
+    - Necesito una estimacion de tiempo para [Realizar presentacion para el cliente](tarea)
+    - Necesito una estimacion de tiempo para [Traducir textos en ingles](tarea)
+    - Necesito una estimacion de tiempo para [Refactorizar clases del proyecto](tarea)
+    - Necesito una estimacion de tiempo para [Implementar text-to-speech y speech-to-text](tarea)
+    - Necesito una estimacion de tiempo para [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Necesito una estimacion de tiempo para [Testear demo para futura presentacion](tarea)
+    - Necesito una estimacion de tiempo para [Identificar tareas triviales en el planeamiento](tarea)
+    - Necesito una estimacion de tiempo para [Implementar realidad virtual al entorno](tarea)
+    - Necesito una estimacion de tiempo para [Realizar animaciones de los modelos](tarea)
+    - Necesito una estimacion de tiempo para [Arreglar bugs en UI](tarea)
+    - Necesito una estimacion de tiempo para [Realizar request en python a la base de datos](tarea)
+    - Necesito una estimacion de tiempo para [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Necesito una estimacion de tiempo para [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Cual es la duración promedio de [Crear tabla en SQL](tarea)
+    - Cual es la duración promedio de [Mejora del funcionamiento del script BotMovement](tarea)
+    - Cual es la duración promedio de [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Cual es la duración promedio de [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Cual es la duración promedio de [Creacion de chatbot en Rasa](tarea)
+    - Cual es la duración promedio de [Implementacion de funcion en Python](tarea)
+    - Cual es la duración promedio de [Agregar autenticacion con algun servicio](tarea)
+    - Cual es la duración promedio de [Realizar test automatizados para DataManager](tarea)
+    - Cual es la duración promedio de [Realizar presentacion para el cliente](tarea)
+    - Cual es la duración promedio de [Traducir textos en ingles](tarea)
+    - Cual es la duración promedio de [Refactorizar clases del proyecto](tarea)
+    - Cual es la duración promedio de [Implementar text-to-speech y speech-to-text](tarea)
+    - Cual es la duración promedio de [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Cual es la duración promedio de [Testear demo para futura presentacion](tarea)
+    - Cual es la duración promedio de [Identificar tareas triviales en el planeamiento](tarea)
+    - Cual es la duración promedio de [Implementar realidad virtual al entorno](tarea)
+    - Cual es la duración promedio de [Realizar animaciones de los modelos](tarea)
+    - Cual es la duración promedio de [Arreglar bugs en UI](tarea)
+    - Cual es la duración promedio de [Realizar request en python a la base de datos](tarea)
+    - Cual es la duración promedio de [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Cual es la duración promedio de [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Estoy buscando una estimacion de tiempo para [Crear tabla en SQL](tarea)
+    - Estoy buscando una estimacion de tiempo para [Mejora del funcionamiento del script BotMovement](tarea)
+    - Estoy buscando una estimacion de tiempo para [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Estoy buscando una estimacion de tiempo para [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Estoy buscando una estimacion de tiempo para [Creacion de chatbot en Rasa](tarea)
+    - Estoy buscando una estimacion de tiempo para [Implementacion de funcion en Python](tarea)
+    - Estoy buscando una estimacion de tiempo para [Agregar autenticacion con algun servicio](tarea)
+    - Estoy buscando una estimacion de tiempo para [Realizar test automatizados para DataManager](tarea)
+    - Estoy buscando una estimacion de tiempo para [Realizar presentacion para el cliente](tarea)
     - Estoy buscando una estimacion de tiempo para [Traducir textos en ingles](tarea)
-    - Podrias decirme cuanto tiempo llevara realizar [Refactorizar clases del proyecto](tarea)?
-    - Cuanto tiempo estimas que llevara completar [Realizar request en python a la base de datos](tarea)?
-    - Puedes darme una estimacion aproximada para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Estoy buscando una estimacion de tiempo para [Refactorizar clases del proyecto](tarea)
+    - Estoy buscando una estimacion de tiempo para [Implementar text-to-speech y speech-to-text](tarea)
+    - Estoy buscando una estimacion de tiempo para [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Estoy buscando una estimacion de tiempo para [Testear demo para futura presentacion](tarea)
+    - Estoy buscando una estimacion de tiempo para [Identificar tareas triviales en el planeamiento](tarea)
+    - Estoy buscando una estimacion de tiempo para [Implementar realidad virtual al entorno](tarea)
+    - Estoy buscando una estimacion de tiempo para [Realizar animaciones de los modelos](tarea)
+    - Estoy buscando una estimacion de tiempo para [Arreglar bugs en UI](tarea)
+    - Estoy buscando una estimacion de tiempo para [Realizar request en python a la base de datos](tarea)
+    - Estoy buscando una estimacion de tiempo para [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Estoy buscando una estimacion de tiempo para [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Crear tabla en SQL](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Mejora del funcionamiento del script BotMovement](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Creacion de chatbot en Rasa](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Implementacion de funcion en Python](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Agregar autenticacion con algun servicio](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Realizar test automatizados para DataManager](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Realizar presentacion para el cliente](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Traducir textos en ingles](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Refactorizar clases del proyecto](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Implementar text-to-speech y speech-to-text](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Testear demo para futura presentacion](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Identificar tareas triviales en el planeamiento](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Implementar realidad virtual al entorno](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Realizar animaciones de los modelos](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Arreglar bugs en UI](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Realizar request en python a la base de datos](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Podrias decirme cuanto tiempo llevara realizar [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Cuanto tiempo estimas que llevara completar [Crear tabla en SQL](tarea)
+    - Cuanto tiempo estimas que llevara completar [Mejora del funcionamiento del script BotMovement](tarea)
+    - Cuanto tiempo estimas que llevara completar [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Cuanto tiempo estimas que llevara completar [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Cuanto tiempo estimas que llevara completar [Creacion de chatbot en Rasa](tarea)
+    - Cuanto tiempo estimas que llevara completar [Implementacion de funcion en Python](tarea)
+    - Cuanto tiempo estimas que llevara completar [Agregar autenticacion con algun servicio](tarea)
+    - Cuanto tiempo estimas que llevara completar [Realizar test automatizados para DataManager](tarea)
+    - Cuanto tiempo estimas que llevara completar [Realizar presentacion para el cliente](tarea)
+    - Cuanto tiempo estimas que llevara completar [Traducir textos en ingles](tarea)
+    - Cuanto tiempo estimas que llevara completar [Refactorizar clases del proyecto](tarea)
+    - Cuanto tiempo estimas que llevara completar [Implementar text-to-speech y speech-to-text](tarea)
+    - Cuanto tiempo estimas que llevara completar [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Cuanto tiempo estimas que llevara completar [Testear demo para futura presentacion](tarea)
+    - Cuanto tiempo estimas que llevara completar [Identificar tareas triviales en el planeamiento](tarea)
+    - Cuanto tiempo estimas que llevara completar [Implementar realidad virtual al entorno](tarea)
+    - Cuanto tiempo estimas que llevara completar [Realizar animaciones de los modelos](tarea)
+    - Cuanto tiempo estimas que llevara completar [Arreglar bugs en UI](tarea)
+    - Cuanto tiempo estimas que llevara completar [Realizar request en python a la base de datos](tarea)
+    - Cuanto tiempo estimas que llevara completar [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Cuanto tiempo estimas que llevara completar [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Puedes darme una estimacion aproximada para [Crear tabla en SQL](tarea)
+    - Puedes darme una estimacion aproximada para [Mejora del funcionamiento del script BotMovement](tarea)
+    - Puedes darme una estimacion aproximada para [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Puedes darme una estimacion aproximada para [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Puedes darme una estimacion aproximada para [Creacion de chatbot en Rasa](tarea)
+    - Puedes darme una estimacion aproximada para [Implementacion de funcion en Python](tarea)
+    - Puedes darme una estimacion aproximada para [Agregar autenticacion con algun servicio](tarea)
+    - Puedes darme una estimacion aproximada para [Realizar test automatizados para DataManager](tarea)
+    - Puedes darme una estimacion aproximada para [Realizar presentacion para el cliente](tarea)
+    - Puedes darme una estimacion aproximada para [Traducir textos en ingles](tarea)
+    - Puedes darme una estimacion aproximada para [Refactorizar clases del proyecto](tarea)
+    - Puedes darme una estimacion aproximada para [Implementar text-to-speech y speech-to-text](tarea)
+    - Puedes darme una estimacion aproximada para [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Puedes darme una estimacion aproximada para [Testear demo para futura presentacion](tarea)
+    - Puedes darme una estimacion aproximada para [Identificar tareas triviales en el planeamiento](tarea)
+    - Puedes darme una estimacion aproximada para [Implementar realidad virtual al entorno](tarea)
+    - Puedes darme una estimacion aproximada para [Realizar animaciones de los modelos](tarea)
+    - Puedes darme una estimacion aproximada para [Arreglar bugs en UI](tarea)
+    - Puedes darme una estimacion aproximada para [Realizar request en python a la base de datos](tarea)
+    - Puedes darme una estimacion aproximada para [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Puedes darme una estimacion aproximada para [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Crear tabla en SQL](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Mejora del funcionamiento del script BotMovement](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Creacion de chatbot en Rasa](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Implementacion de funcion en Python](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Agregar autenticacion con algun servicio](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Realizar test automatizados para DataManager](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Realizar presentacion para el cliente](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Traducir textos en ingles](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Refactorizar clases del proyecto](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Implementar text-to-speech y speech-to-text](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Testear demo para futura presentacion](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Identificar tareas triviales en el planeamiento](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Implementar realidad virtual al entorno](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Realizar animaciones de los modelos](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Arreglar bugs en UI](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Realizar request en python a la base de datos](tarea)
+    - Me gustaria saber cuanto esfuerzo se necesita para [Realizar request desde el front-end al servidor usando javascript](tarea)
     - Me gustaria saber cuanto esfuerzo se necesita para [Refactorizar codigo del proyecto de back-end en Java](tarea)
-    - Cuanto tiempo tomara en promedio realizar [Arreglar bugs en UI](tarea)?
+    - Cuanto tiempo tomara en promedio realizar [Crear tabla en SQL](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Mejora del funcionamiento del script BotMovement](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Creacion de chatbot en Rasa](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Implementacion de funcion en Python](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Agregar autenticacion con algun servicio](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Realizar test automatizados para DataManager](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Realizar presentacion para el cliente](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Traducir textos en ingles](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Refactorizar clases del proyecto](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Implementar text-to-speech y speech-to-text](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Testear demo para futura presentacion](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Identificar tareas triviales en el planeamiento](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Implementar realidad virtual al entorno](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Realizar animaciones de los modelos](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Arreglar bugs en UI](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Realizar request en python a la base de datos](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Cuanto tiempo tomara en promedio realizar [Refactorizar codigo del proyecto de back-end en Java](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Crear tabla en SQL](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Mejora del funcionamiento del script BotMovement](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Mejora del funcionamiento del script Calculador de Java](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Creacion de chatbot en Rasa](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Implementacion de funcion en Python](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Agregar autenticacion con algun servicio](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Realizar test automatizados para DataManager](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Realizar presentacion para el cliente](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Traducir textos en ingles](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Refactorizar clases del proyecto](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Implementar text-to-speech y speech-to-text](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Testear demo para futura presentacion](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Identificar tareas triviales en el planeamiento](tarea)
     - Necesito una estimacion basada en proyectos anteriores similares a [Implementar realidad virtual al entorno](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Realizar animaciones de los modelos](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Arreglar bugs en UI](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Realizar request en python a la base de datos](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Realizar request desde el front-end al servidor usando javascript](tarea)
+    - Necesito una estimacion basada en proyectos anteriores similares a [Refactorizar codigo del proyecto de back-end en Java](tarea)
     - Quisiera una estimacion para la tarea mencionada
     - Cuanto tiempo tomara completar la tarea?
     - Necesito una estimacion para la tarea
@@ -100,20 +420,319 @@ nlu:
 - intent: persona_tarea
   examples: |
     - Cual es la persona mas adecuada para realizar [Crear tabla en SQL](tarea)?
-    - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script BotMovement](tarea)?
     - Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Cual es la persona mas adecuada para realizar [Creacion de chatbot en Rasa](tarea)?
+    - Cual es la persona mas adecuada para realizar [Implementacion de funcion en Python](tarea)?
+    - Cual es la persona mas adecuada para realizar [Agregar autenticacion con algun servicio](tarea)?
+    - Cual es la persona mas adecuada para realizar [Realizar test automatizados para DataManager](tarea)?
+    - Cual es la persona mas adecuada para realizar [Realizar presentacion para el cliente](tarea)?
+    - Cual es la persona mas adecuada para realizar [Traducir textos en ingles](tarea)?
+    - Cual es la persona mas adecuada para realizar [Refactorizar clases del proyecto](tarea)?
+    - Cual es la persona mas adecuada para realizar [Implementar text-to-speech y speech-to-text](tarea)?
+    - Cual es la persona mas adecuada para realizar [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Cual es la persona mas adecuada para realizar [Testear demo para futura presentacion](tarea)?
+    - Cual es la persona mas adecuada para realizar [Identificar tareas triviales en el planeamiento](tarea)?
+    - Cual es la persona mas adecuada para realizar [Implementar realidad virtual al entorno](tarea)?
+    - Cual es la persona mas adecuada para realizar [Realizar animaciones de los modelos](tarea)?
+    - Cual es la persona mas adecuada para realizar [Arreglar bugs en UI](tarea)?
+    - Cual es la persona mas adecuada para realizar [Realizar request en python a la base de datos](tarea)?
+    - Cual es la persona mas adecuada para realizar [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Cual es la persona mas adecuada para realizar [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien es el mejor para realizar la tarea [Crear tabla en SQL](tarea)?
+    - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script Notifier en Unity](tarea)?
     - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien es el mejor para realizar la tarea [Creacion de chatbot en Rasa](tarea)?
+    - Quien es el mejor para realizar la tarea [Implementacion de funcion en Python](tarea)?
+    - Quien es el mejor para realizar la tarea [Agregar autenticacion con algun servicio](tarea)?
+    - Quien es el mejor para realizar la tarea [Realizar test automatizados para DataManager](tarea)?
+    - Quien es el mejor para realizar la tarea [Realizar presentacion para el cliente](tarea)?
+    - Quien es el mejor para realizar la tarea [Traducir textos en ingles](tarea)?
+    - Quien es el mejor para realizar la tarea [Refactorizar clases del proyecto](tarea)?
+    - Quien es el mejor para realizar la tarea [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien es el mejor para realizar la tarea [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien es el mejor para realizar la tarea [Testear demo para futura presentacion](tarea)?
+    - Quien es el mejor para realizar la tarea [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien es el mejor para realizar la tarea [Implementar realidad virtual al entorno](tarea)?
+    - Quien es el mejor para realizar la tarea [Realizar animaciones de los modelos](tarea)?
+    - Quien es el mejor para realizar la tarea [Arreglar bugs en UI](tarea)?
+    - Quien es el mejor para realizar la tarea [Realizar request en python a la base de datos](tarea)?
+    - Quien es el mejor para realizar la tarea [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien es el mejor para realizar la tarea [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien es idoneo para hacer [Crear tabla en SQL](tarea)?
+    - Quien es idoneo para hacer [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien es idoneo para hacer [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien es idoneo para hacer [Mejora del funcionamiento del script Calculador de Java](tarea)?
     - Quien es idoneo para hacer [Creacion de chatbot en Rasa](tarea)?
+    - Quien es idoneo para hacer [Implementacion de funcion en Python](tarea)?
+    - Quien es idoneo para hacer [Agregar autenticacion con algun servicio](tarea)?
+    - Quien es idoneo para hacer [Realizar test automatizados para DataManager](tarea)?
+    - Quien es idoneo para hacer [Realizar presentacion para el cliente](tarea)?
+    - Quien es idoneo para hacer [Traducir textos en ingles](tarea)?
+    - Quien es idoneo para hacer [Refactorizar clases del proyecto](tarea)?
+    - Quien es idoneo para hacer [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien es idoneo para hacer [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien es idoneo para hacer [Testear demo para futura presentacion](tarea)?
+    - Quien es idoneo para hacer [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien es idoneo para hacer [Implementar realidad virtual al entorno](tarea)?
+    - Quien es idoneo para hacer [Realizar animaciones de los modelos](tarea)?
+    - Quien es idoneo para hacer [Arreglar bugs en UI](tarea)?
+    - Quien es idoneo para hacer [Realizar request en python a la base de datos](tarea)?
+    - Quien es idoneo para hacer [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien es idoneo para hacer [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - A quien debería asignar [Crear tabla en SQL](tarea)?
+    - A quien debería asignar [Mejora del funcionamiento del script BotMovement](tarea)?
+    - A quien debería asignar [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - A quien debería asignar [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - A quien debería asignar [Creacion de chatbot en Rasa](tarea)?
     - A quien debería asignar [Implementacion de funcion en Python](tarea)?
+    - A quien debería asignar [Agregar autenticacion con algun servicio](tarea)?
+    - A quien debería asignar [Realizar test automatizados para DataManager](tarea)?
+    - A quien debería asignar [Realizar presentacion para el cliente](tarea)?
+    - A quien debería asignar [Traducir textos en ingles](tarea)?
+    - A quien debería asignar [Refactorizar clases del proyecto](tarea)?
+    - A quien debería asignar [Implementar text-to-speech y speech-to-text](tarea)?
+    - A quien debería asignar [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - A quien debería asignar [Testear demo para futura presentacion](tarea)?
+    - A quien debería asignar [Identificar tareas triviales en el planeamiento](tarea)?
+    - A quien debería asignar [Implementar realidad virtual al entorno](tarea)?
+    - A quien debería asignar [Realizar animaciones de los modelos](tarea)?
+    - A quien debería asignar [Arreglar bugs en UI](tarea)?
+    - A quien debería asignar [Realizar request en python a la base de datos](tarea)?
+    - A quien debería asignar [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - A quien debería asignar [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Cual es el experto en [Crear tabla en SQL](tarea)?
+    - Cual es el experto en [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Cual es el experto en [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Cual es el experto en [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Cual es el experto en [Creacion de chatbot en Rasa](tarea)?
+    - Cual es el experto en [Implementacion de funcion en Python](tarea)?
     - Cual es el experto en [Agregar autenticacion con algun servicio](tarea)?
+    - Cual es el experto en [Realizar test automatizados para DataManager](tarea)?
+    - Cual es el experto en [Realizar presentacion para el cliente](tarea)?
+    - Cual es el experto en [Traducir textos en ingles](tarea)?
+    - Cual es el experto en [Refactorizar clases del proyecto](tarea)?
+    - Cual es el experto en [Implementar text-to-speech y speech-to-text](tarea)?
+    - Cual es el experto en [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Cual es el experto en [Testear demo para futura presentacion](tarea)?
+    - Cual es el experto en [Identificar tareas triviales en el planeamiento](tarea)?
+    - Cual es el experto en [Implementar realidad virtual al entorno](tarea)?
+    - Cual es el experto en [Realizar animaciones de los modelos](tarea)?
+    - Cual es el experto en [Arreglar bugs en UI](tarea)?
+    - Cual es el experto en [Realizar request en python a la base de datos](tarea)?
+    - Cual es el experto en [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Cual es el experto en [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien tiene experiencia en [Crear tabla en SQL](tarea)?
+    - Quien tiene experiencia en [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien tiene experiencia en [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien tiene experiencia en [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien tiene experiencia en [Creacion de chatbot en Rasa](tarea)?
+    - Quien tiene experiencia en [Implementacion de funcion en Python](tarea)?
+    - Quien tiene experiencia en [Agregar autenticacion con algun servicio](tarea)?
+    - Quien tiene experiencia en [Realizar test automatizados para DataManager](tarea)?
+    - Quien tiene experiencia en [Realizar presentacion para el cliente](tarea)?
     - Quien tiene experiencia en [Traducir textos en ingles](tarea)?
+    - Quien tiene experiencia en [Refactorizar clases del proyecto](tarea)?
+    - Quien tiene experiencia en [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien tiene experiencia en [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien tiene experiencia en [Testear demo para futura presentacion](tarea)?
+    - Quien tiene experiencia en [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien tiene experiencia en [Implementar realidad virtual al entorno](tarea)?
+    - Quien tiene experiencia en [Realizar animaciones de los modelos](tarea)?
+    - Quien tiene experiencia en [Arreglar bugs en UI](tarea)?
+    - Quien tiene experiencia en [Realizar request en python a la base de datos](tarea)?
+    - Quien tiene experiencia en [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien tiene experiencia en [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien es la mejor opción para [Crear tabla en SQL](tarea)?
+    - Quien es la mejor opción para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien es la mejor opción para [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien es la mejor opción para [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien es la mejor opción para [Creacion de chatbot en Rasa](tarea)?
+    - Quien es la mejor opción para [Implementacion de funcion en Python](tarea)?
+    - Quien es la mejor opción para [Agregar autenticacion con algun servicio](tarea)?
+    - Quien es la mejor opción para [Realizar test automatizados para DataManager](tarea)?
+    - Quien es la mejor opción para [Realizar presentacion para el cliente](tarea)?
+    - Quien es la mejor opción para [Traducir textos en ingles](tarea)?
+    - Quien es la mejor opción para [Refactorizar clases del proyecto](tarea)?
     - Quien es la mejor opción para [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien es la mejor opción para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien es la mejor opción para [Testear demo para futura presentacion](tarea)?
+    - Quien es la mejor opción para [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien es la mejor opción para [Implementar realidad virtual al entorno](tarea)?
+    - Quien es la mejor opción para [Realizar animaciones de los modelos](tarea)?
+    - Quien es la mejor opción para [Arreglar bugs en UI](tarea)?
+    - Quien es la mejor opción para [Realizar request en python a la base de datos](tarea)?
+    - Quien es la mejor opción para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien es la mejor opción para [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Cual es el miembro del equipo más apto para [Crear tabla en SQL](tarea)?
+    - Cual es el miembro del equipo más apto para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Cual es el miembro del equipo más apto para [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Cual es el miembro del equipo más apto para [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Cual es el miembro del equipo más apto para [Creacion de chatbot en Rasa](tarea)?
+    - Cual es el miembro del equipo más apto para [Implementacion de funcion en Python](tarea)?
+    - Cual es el miembro del equipo más apto para [Agregar autenticacion con algun servicio](tarea)?
+    - Cual es el miembro del equipo más apto para [Realizar test automatizados para DataManager](tarea)?
+    - Cual es el miembro del equipo más apto para [Realizar presentacion para el cliente](tarea)?
+    - Cual es el miembro del equipo más apto para [Traducir textos en ingles](tarea)?
+    - Cual es el miembro del equipo más apto para [Refactorizar clases del proyecto](tarea)?
+    - Cual es el miembro del equipo más apto para [Implementar text-to-speech y speech-to-text](tarea)?
     - Cual es el miembro del equipo más apto para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Cual es el miembro del equipo más apto para [Testear demo para futura presentacion](tarea)?
+    - Cual es el miembro del equipo más apto para [Identificar tareas triviales en el planeamiento](tarea)?
+    - Cual es el miembro del equipo más apto para [Implementar realidad virtual al entorno](tarea)?
+    - Cual es el miembro del equipo más apto para [Realizar animaciones de los modelos](tarea)?
+    - Cual es el miembro del equipo más apto para [Arreglar bugs en UI](tarea)?
+    - Cual es el miembro del equipo más apto para [Realizar request en python a la base de datos](tarea)?
+    - Cual es el miembro del equipo más apto para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Cual es el miembro del equipo más apto para [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien es el más capacitado para [Crear tabla en SQL](tarea)?
+    - Quien es el más capacitado para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien es el más capacitado para [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien es el más capacitado para [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien es el más capacitado para [Creacion de chatbot en Rasa](tarea)?
+    - Quien es el más capacitado para [Implementacion de funcion en Python](tarea)?
+    - Quien es el más capacitado para [Agregar autenticacion con algun servicio](tarea)?
+    - Quien es el más capacitado para [Realizar test automatizados para DataManager](tarea)?
+    - Quien es el más capacitado para [Realizar presentacion para el cliente](tarea)?
+    - Quien es el más capacitado para [Traducir textos en ingles](tarea)?
+    - Quien es el más capacitado para [Refactorizar clases del proyecto](tarea)?
+    - Quien es el más capacitado para [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien es el más capacitado para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien es el más capacitado para [Testear demo para futura presentacion](tarea)?
     - Quien es el más capacitado para [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien es el más capacitado para [Implementar realidad virtual al entorno](tarea)?
+    - Quien es el más capacitado para [Realizar animaciones de los modelos](tarea)?
+    - Quien es el más capacitado para [Arreglar bugs en UI](tarea)?
+    - Quien es el más capacitado para [Realizar request en python a la base de datos](tarea)?
+    - Quien es el más capacitado para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien es el más capacitado para [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - A quien debería asignar la responsabilidad de [Crear tabla en SQL](tarea)?
+    - A quien debería asignar la responsabilidad de [Mejora del funcionamiento del script BotMovement](tarea)?
+    - A quien debería asignar la responsabilidad de [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - A quien debería asignar la responsabilidad de [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - A quien debería asignar la responsabilidad de [Creacion de chatbot en Rasa](tarea)?
+    - A quien debería asignar la responsabilidad de [Implementacion de funcion en Python](tarea)?
+    - A quien debería asignar la responsabilidad de [Agregar autenticacion con algun servicio](tarea)?
+    - A quien debería asignar la responsabilidad de [Realizar test automatizados para DataManager](tarea)?
+    - A quien debería asignar la responsabilidad de [Realizar presentacion para el cliente](tarea)?
+    - A quien debería asignar la responsabilidad de [Traducir textos en ingles](tarea)?
+    - A quien debería asignar la responsabilidad de [Refactorizar clases del proyecto](tarea)?
+    - A quien debería asignar la responsabilidad de [Implementar text-to-speech y speech-to-text](tarea)?
+    - A quien debería asignar la responsabilidad de [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - A quien debería asignar la responsabilidad de [Testear demo para futura presentacion](tarea)?
+    - A quien debería asignar la responsabilidad de [Identificar tareas triviales en el planeamiento](tarea)?
+    - A quien debería asignar la responsabilidad de [Implementar realidad virtual al entorno](tarea)?
     - A quien debería asignar la responsabilidad de [Realizar animaciones de los modelos](tarea)?
+    - A quien debería asignar la responsabilidad de [Arreglar bugs en UI](tarea)?
+    - A quien debería asignar la responsabilidad de [Realizar request en python a la base de datos](tarea)?
+    - A quien debería asignar la responsabilidad de [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - A quien debería asignar la responsabilidad de [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Cual es el perfil adecuado para [Crear tabla en SQL](tarea)?
+    - Cual es el perfil adecuado para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Cual es el perfil adecuado para [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Cual es el perfil adecuado para [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Cual es el perfil adecuado para [Creacion de chatbot en Rasa](tarea)?
     - Cual es el perfil adecuado para [Implementacion de funcion en Python](tarea)?
+    - Cual es el perfil adecuado para [Agregar autenticacion con algun servicio](tarea)?
+    - Cual es el perfil adecuado para [Realizar test automatizados para DataManager](tarea)?
+    - Cual es el perfil adecuado para [Realizar presentacion para el cliente](tarea)?
+    - Cual es el perfil adecuado para [Traducir textos en ingles](tarea)?
+    - Cual es el perfil adecuado para [Refactorizar clases del proyecto](tarea)?
+    - Cual es el perfil adecuado para [Implementar text-to-speech y speech-to-text](tarea)?
+    - Cual es el perfil adecuado para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Cual es el perfil adecuado para [Testear demo para futura presentacion](tarea)?
+    - Cual es el perfil adecuado para [Identificar tareas triviales en el planeamiento](tarea)?
+    - Cual es el perfil adecuado para [Implementar realidad virtual al entorno](tarea)?
+    - Cual es el perfil adecuado para [Realizar animaciones de los modelos](tarea)?
+    - Cual es el perfil adecuado para [Arreglar bugs en UI](tarea)?
+    - Cual es el perfil adecuado para [Realizar request en python a la base de datos](tarea)?
+    - Cual es el perfil adecuado para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Cual es el perfil adecuado para [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien tiene habilidades para [Crear tabla en SQL](tarea)?
+    - Quien tiene habilidades para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien tiene habilidades para [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien tiene habilidades para [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien tiene habilidades para [Creacion de chatbot en Rasa](tarea)?
+    - Quien tiene habilidades para [Implementacion de funcion en Python](tarea)?
+    - Quien tiene habilidades para [Agregar autenticacion con algun servicio](tarea)?
+    - Quien tiene habilidades para [Realizar test automatizados para DataManager](tarea)?
+    - Quien tiene habilidades para [Realizar presentacion para el cliente](tarea)?
+    - Quien tiene habilidades para [Traducir textos en ingles](tarea)?
+    - Quien tiene habilidades para [Refactorizar clases del proyecto](tarea)?
+    - Quien tiene habilidades para [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien tiene habilidades para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien tiene habilidades para [Testear demo para futura presentacion](tarea)?
+    - Quien tiene habilidades para [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien tiene habilidades para [Implementar realidad virtual al entorno](tarea)?
+    - Quien tiene habilidades para [Realizar animaciones de los modelos](tarea)?
+    - Quien tiene habilidades para [Arreglar bugs en UI](tarea)?
     - Quien tiene habilidades para [Realizar request en python a la base de datos](tarea)?
+    - Quien tiene habilidades para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien tiene habilidades para [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien es el más indicado para [Crear tabla en SQL](tarea)?
+    - Quien es el más indicado para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien es el más indicado para [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien es el más indicado para [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien es el más indicado para [Creacion de chatbot en Rasa](tarea)?
+    - Quien es el más indicado para [Implementacion de funcion en Python](tarea)?
+    - Quien es el más indicado para [Agregar autenticacion con algun servicio](tarea)?
+    - Quien es el más indicado para [Realizar test automatizados para DataManager](tarea)?
+    - Quien es el más indicado para [Realizar presentacion para el cliente](tarea)?
+    - Quien es el más indicado para [Traducir textos en ingles](tarea)?
+    - Quien es el más indicado para [Refactorizar clases del proyecto](tarea)?
+    - Quien es el más indicado para [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien es el más indicado para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien es el más indicado para [Testear demo para futura presentacion](tarea)?
+    - Quien es el más indicado para [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien es el más indicado para [Implementar realidad virtual al entorno](tarea)?
+    - Quien es el más indicado para [Realizar animaciones de los modelos](tarea)?
+    - Quien es el más indicado para [Arreglar bugs en UI](tarea)?
+    - Quien es el más indicado para [Realizar request en python a la base de datos](tarea)?
     - Quien es el más indicado para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien es el más indicado para [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Quien es el más indicado para [Crear tabla en SQL](tarea)?
+    - Quien es el más indicado para [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Quien es el más indicado para [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Quien es el más indicado para [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Quien es el más indicado para [Creacion de chatbot en Rasa](tarea)?
+    - Quien es el más indicado para [Implementacion de funcion en Python](tarea)?
+    - Quien es el más indicado para [Agregar autenticacion con algun servicio](tarea)?
+    - Quien es el más indicado para [Realizar test automatizados para DataManager](tarea)?
+    - Quien es el más indicado para [Realizar presentacion para el cliente](tarea)?
+    - Quien es el más indicado para [Traducir textos en ingles](tarea)?
+    - Quien es el más indicado para [Refactorizar clases del proyecto](tarea)?
+    - Quien es el más indicado para [Implementar text-to-speech y speech-to-text](tarea)?
+    - Quien es el más indicado para [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Quien es el más indicado para [Testear demo para futura presentacion](tarea)?
+    - Quien es el más indicado para [Identificar tareas triviales en el planeamiento](tarea)?
+    - Quien es el más indicado para [Implementar realidad virtual al entorno](tarea)?
+    - Quien es el más indicado para [Realizar animaciones de los modelos](tarea)?
+    - Quien es el más indicado para [Arreglar bugs en UI](tarea)?
+    - Quien es el más indicado para [Realizar request en python a la base de datos](tarea)?
+    - Quien es el más indicado para [Realizar request desde el front-end al servidor usando javascript](tarea)?
+    - Quien es el más indicado para [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Crear tabla en SQL](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Creacion de chatbot en Rasa](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Implementacion de funcion en Python](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Agregar autenticacion con algun servicio](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Realizar test automatizados para DataManager](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Realizar presentacion para el cliente](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Traducir textos en ingles](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Refactorizar clases del proyecto](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Implementar text-to-speech y speech-to-text](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Testear demo para futura presentacion](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Identificar tareas triviales en el planeamiento](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Implementar realidad virtual al entorno](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Realizar animaciones de los modelos](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Arreglar bugs en UI](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Realizar request en python a la base de datos](tarea)?
+    - Cual es la persona más idónea para llevar a cabo [Realizar request desde el front-end al servidor usando javascript](tarea)?
     - Cual es la persona más idónea para llevar a cabo [Refactorizar codigo del proyecto de back-end en Java](tarea)?
     - Cual es la persona mas adecuada para realizar?
     - Quien es el mejor para realizar la tarea?
