@@ -1,7 +1,0 @@
-{
-   "historicos": [{"_id": "ObjectId('648ca8403f10ce9450bb1e9e')", "tarea": "realizar request a la base de datos con python", "puntos": "5", "ejecutor": "mateocostes", "lenguaje": "python", "area": "base de datos", "fecha": "datetime.datetime(2023, 6, 16, 20, 21, 52, 266000)"},
-   {"_id": "ObjectId('648ca8403f10ce9450bb1e9e')", "tarea": "algo request a la base de datos con python", "puntos": "20", "ejecutor": "agustin", "lenguaje": "python", "area": "base de datos", "fecha": "datetime.datetime(2023, 6, 16, 20, 21, 52, 266000)"}],
-   "promedio_puntos": "10"
-}
-
-
