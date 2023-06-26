@@ -44,7 +44,7 @@ def writeArchivo(dire,diccionario):
         json.dump(diccionario,archivo)
         archivo.close()
 
-ip = "9af0-201-235-167-187.ngrok-free.app" #MODIFICAR
+ip = "56e0-201-235-167-187.ngrok-free.app" #MODIFICAR
 api_endpoint_get_recomendacion = f"http://{ip}/dispatcher/get-recomendacion"
 api_endpoint_get_vector = f"http://{ip}/dispatcher/get-vector"
 diccionarioParticipantes = ""
@@ -127,7 +127,7 @@ def asignarTarea(tracker)-> int:
     if (tarea != None):
         return 0 #Retorna 0 porque tarea no es None y porque lo reconocio como entidad
     else:
-        tarea = tracker.get_slot("participante")
+        tarea = tracker.get_slot("tarea")
         if (tarea != None):
             return 1 #Retorna 1 porque tarea no es None y porque lo reconocio como slot
         else: 
@@ -144,7 +144,7 @@ def leerDatosHistoricos(posicion, tarea, ejecutor, puntos):
         puntos = diccionarioDatos["historicos"][posicion]["puntos"]
     return tarea, ejecutor, puntos
 
-def generarMotivos():
+def generarMotivos(tracker):
     global tarea, diccionarioDatos, motivoEstimacion, motivoPersona
     #Inicializo variables
     motivoEstimacion == ""
@@ -155,6 +155,7 @@ def generarMotivos():
     lista_comparacionPersonas = []
     lista_motivosEstimacion = []
     lista_motivosPersona = []
+    participante = tracker.get_slot("participante")
 
     historico_tarea, historico_ejecutor, historico_puntos = leerDatosHistoricos(0, historico_tarea, historico_ejecutor, historico_puntos)
     if historico_tarea == None and historico_ejecutor == None and historico_puntos == None: #Si no hay datos
@@ -171,6 +172,9 @@ def generarMotivos():
         motivoPersona5 = "La falta de datos pertinentes dificulta la recomendacion de alguien para la tarea mencionada."
 
     elif historico_tarea == tarea: #Si la tarea ya fue realizada
+        if (participante != None) and (participante == historico_ejecutor): #Si la persona que realiza la pregunta es la que realizo la tarea, dice usted en vez de su nombre
+            historico_ejecutor = "usted"
+        
         motivoEstimacion1 = f"La tarea ingresada ya fue realizada anteriormente por {historico_ejecutor}, con una demora de {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
         motivoEstimacion2 = f"La solicitud de trabajo coincide con una tarea previa realizada por {historico_ejecutor}, quien tardo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas, en completarla."
         motivoEstimacion3 = f"Segun los registros, {historico_ejecutor} ya ha abordado esa tarea y demoro {historico_puntos} puntos para completarla, es decir {historico_puntos * estimacionHora} horas."
@@ -193,33 +197,46 @@ def generarMotivos():
             historico_tarea2 = ""
             historico_ejecutor2 = ""
             historico_puntos2 = ""
+            motivo_tarea_similar = ""
             historico_tarea1, historico_ejecutor1, historico_puntos1 = leerDatosHistoricos(pos1, historico_tarea1, historico_ejecutor1, historico_puntos1)
             historico_tarea2, historico_ejecutor2, historico_puntos2 = leerDatosHistoricos(pos2, historico_tarea2, historico_ejecutor2, historico_puntos2)
 
+            if (participante != None): #Si la persona que realiza la pregunta es la que realizo la tarea, dice usted en vez de su nombre
+                if (participante == historico_ejecutor1):
+                    historico_ejecutor1 = "usted"
+                if (participante == historico_ejecutor2):
+                    historico_ejecutor2 = "usted"
+
             if historico_ejecutor1 != historico_ejecutor2: #Si las tareas fueron realizadas por personas diferentes
-                motivo_tarea_similar1 = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos, realizada por {historico_ejecutor1}"
-                motivo_tarea_similar2 = f"{historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
+                motivo_tarea_similar = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos, realizada por {historico_ejecutor1}"
+                if historico_tarea2[0].lower() == 'i': #si la primera letra es "i"
+                    motivo_tarea_similar = f"{motivo_tarea_similar} e {historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
+                else:
+                    motivo_tarea_similar = f"{motivo_tarea_similar} y {historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
 
-                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2}, podrian resolver perfectamente la nueva tarea."
-                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} demostraron habilidades sobresalientes y podrian resolver perfectamente la nueva tarea."
-                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado competencia y podrian abordar con exito la nueva tarea."
-                motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} se destacaron por su eficiencia y podrian resolver perfectamente la nueva tarea."
-                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado habilidades excepcionales y podrian abordar la nueva tarea con exito."
+                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2}, podrian resolver perfectamente la nueva tarea."
+                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} demostraron habilidades sobresalientes y podrian resolver perfectamente la nueva tarea."
+                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado competencia y podrian abordar con exito la nueva tarea."
+                motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} se destacaron por su eficiencia y podrian resolver perfectamente la nueva tarea."
+                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado habilidades excepcionales y podrian abordar la nueva tarea con exito."
             else: #Si las tareas fueron realizadas por la misma persona
-                motivo_tarea_similar1 = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos"
-                motivo_tarea_similar2 = f"{historico_tarea2} con una estimacion de {historico_puntos2} puntos, ambas realizadas por {historico_ejecutor2}"
+                motivo_tarea_similar = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos"
+                if historico_tarea2[0].lower() == 'i': #si la primera letra es "i"
+                    motivo_tarea_similar = f"{motivo_tarea_similar} e {historico_tarea2} con una estimacion de {historico_puntos2} puntos, ambas realizadas por {historico_ejecutor2}"
+                else:
+                    motivo_tarea_similar = f"{motivo_tarea_similar} y {historico_tarea2} con una estimacion de {historico_puntos2} puntos, ambas realizadas por {historico_ejecutor2}"
 
-                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, el mismo, podria resolver perfectamente la nueva tarea."
-                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, demostrando habilidades sobresalientes, podria resolver perfectamente la nueva tarea."
-                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, demostrando competencia, podria abordar con exito la nueva tarea."
-                motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, destacandose por su eficiencia, el mismo, podria resolver perfectamente la nueva tarea."
-                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, habiendo demostrado habilidades excepcionales, podria abordar la nueva tarea con exito."
+                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, el mismo, podria resolver perfectamente la nueva tarea."
+                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, demostrando habilidades sobresalientes, podria resolver perfectamente la nueva tarea."
+                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, demostrando competencia, podria abordar con exito la nueva tarea."
+                motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, destacandose por su eficiencia, el mismo, podria resolver perfectamente la nueva tarea."
+                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, habiendo demostrado habilidades excepcionales, podria abordar la nueva tarea con exito."
 
-            motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
-            motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, propongo estimar la nueva tarea con {estimacion} puntos."
-            motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, sugiero una estimacion de {estimacion} puntos para la tarea actual."
-            motivoEstimacion4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, creo que una estimacion de {estimacion} puntos seria apropiada para la nueva tarea."
-            motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar1} y {motivo_tarea_similar2}, considero razonable asignar una estimacion de {estimacion} puntos a la tarea actual."
+            motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
+            motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, propongo estimar la nueva tarea con {estimacion} puntos."
+            motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, sugiero una estimacion de {estimacion} puntos para la tarea actual."
+            motivoEstimacion4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, creo que una estimacion de {estimacion} puntos seria apropiada para la nueva tarea."
+            motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, considero razonable asignar una estimacion de {estimacion} puntos a la tarea actual."
 
             if historico_puntos1 != historico_puntos2 and historico_ejecutor1 != historico_ejecutor2:
                 if historico_puntos1 > historico_puntos2: #Si una persona resolvio mas rapido una tarea que otra.
@@ -267,7 +284,7 @@ def darMotivo(tracker)-> bool:
     if tarea_asignada == 0: #Recibio una nueva tarea, por lo que genera un nuevo motivo.
         print("ES 0")
         AsignarJsonDatos()
-        generarMotivos()
+        generarMotivos(tracker)
         return True
     elif tarea_asignada == 1: #No recibio una nueva tarea, pero tiene una tarea en el slot, por lo que mantiene el motivo de la tarea enviada anteriormente
         print("ES 1")

@@ -50,6 +50,12 @@ nlu:
     - estoy hablando con un bot?
     - estoy hablando con un ser vivo?
 
+- intent: agradecer
+  examples: |
+    - gracias
+    - muchas gracias
+    - te agradezco
+
 - intent: presentarse
   examples: |
     - [mateocostes](participante)
@@ -60,28 +66,29 @@ nlu:
     - [usuarionuevo](participante)
     - [nombre](participante)
     - [pepe](participante)
+    - [alelagar](participante)
 
 - intent: estimacion_tarea
   examples: |
-    - Quisiera una estimacion para la tarea [Crear tabla en SQL](tarea)
+    - Hola, Quisiera una estimacion para la tarea [Crear tabla en SQL](tarea)
     - Quisiera una estimacion para la tarea [Mejora del funcionamiento del script BotMovement](tarea)
-    - Quisiera una estimacion para la tarea [Mejora del funcionamiento del script Notifier en Unity](tarea)
+    - Buenas, Quisiera una estimacion para la tarea [Mejora del funcionamiento del script Notifier en Unity](tarea)
     - Quisiera una estimacion para la tarea [Mejora del funcionamiento del script Calculador de Java](tarea)
-    - Quisiera una estimacion para la tarea [Creacion de chatbot en Rasa](tarea)
+    - Buenos dias, Quisiera una estimacion para la tarea [Creacion de chatbot en Rasa](tarea)
     - Quisiera una estimacion para la tarea [Implementacion de funcion en Python](tarea)
-    - Quisiera una estimacion para la tarea [Agregar autenticacion con algun servicio](tarea)
+    - Buenas tardes, Quisiera una estimacion para la tarea [Agregar autenticacion con algun servicio](tarea)
     - Quisiera una estimacion para la tarea [Realizar test automatizados para DataManager](tarea)
-    - Quisiera una estimacion para la tarea [Realizar presentacion para el cliente](tarea)
+    - Buenas noches, Quisiera una estimacion para la tarea [Realizar presentacion para el cliente](tarea)
     - Quisiera una estimacion para la tarea [Traducir textos en ingles](tarea)
-    - Quisiera una estimacion para la tarea [Refactorizar clases del proyecto](tarea)
+    - Hola, Quisiera una estimacion para la tarea [Refactorizar clases del proyecto](tarea)
     - Quisiera una estimacion para la tarea [Implementar text-to-speech y speech-to-text](tarea)
-    - Quisiera una estimacion para la tarea [Armar pagina web del proyecto usando JavaScript](tarea)
+    - Buenas, Quisiera una estimacion para la tarea [Armar pagina web del proyecto usando JavaScript](tarea)
     - Quisiera una estimacion para la tarea [Testear demo para futura presentacion](tarea)
-    - Quisiera una estimacion para la tarea [Identificar tareas triviales en el planeamiento](tarea)
+    - Buenos dias, Quisiera una estimacion para la tarea [Identificar tareas triviales en el planeamiento](tarea)
     - Quisiera una estimacion para la tarea [Implementar realidad virtual al entorno](tarea)
-    - Quisiera una estimacion para la tarea [Realizar animaciones de los modelos](tarea)
+    - Buenos tardes, Quisiera una estimacion para la tarea [Realizar animaciones de los modelos](tarea)
     - Quisiera una estimacion para la tarea [Arreglar bugs en UI](tarea)
-    - Quisiera una estimacion para la tarea [Realizar request en python a la base de datos](tarea)
+    - Buenos noches, Quisiera una estimacion para la tarea [Realizar request en python a la base de datos](tarea)
     - Quisiera una estimacion para la tarea [Realizar request desde el front-end al servidor usando javascript](tarea)
     - Quisiera una estimacion para la tarea [Refactorizar codigo del proyecto de back-end en Java](tarea)
     - Cuanto tiempo tomara completar [Crear tabla en SQL](tarea)
@@ -419,27 +426,27 @@ nlu:
 
 - intent: persona_tarea
   examples: |
-    - Cual es la persona mas adecuada para realizar [Crear tabla en SQL](tarea)?
-    - Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script BotMovement](tarea)?
-    - Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script Notifier en Unity](tarea)?
-    - Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script Calculador de Java](tarea)?
+    - Hola, Cual es la persona mas adecuada para realizar [Crear tabla en SQL](tarea)?
+    - Buenos dias, Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script BotMovement](tarea)?
+    - Buenas tardes, Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script Notifier en Unity](tarea)?
+    - Buenas noches, Cual es la persona mas adecuada para realizar [Mejora del funcionamiento del script Calculador de Java](tarea)?
     - Cual es la persona mas adecuada para realizar [Creacion de chatbot en Rasa](tarea)?
-    - Cual es la persona mas adecuada para realizar [Implementacion de funcion en Python](tarea)?
-    - Cual es la persona mas adecuada para realizar [Agregar autenticacion con algun servicio](tarea)?
-    - Cual es la persona mas adecuada para realizar [Realizar test automatizados para DataManager](tarea)?
-    - Cual es la persona mas adecuada para realizar [Realizar presentacion para el cliente](tarea)?
+    - Hola, Cual es la persona mas adecuada para realizar [Implementacion de funcion en Python](tarea)?
+    - Buenos dias, Cual es la persona mas adecuada para realizar [Agregar autenticacion con algun servicio](tarea)?
+    - Buenas tardes, Cual es la persona mas adecuada para realizar [Realizar test automatizados para DataManager](tarea)?
+    - Buenas noches, Cual es la persona mas adecuada para realizar [Realizar presentacion para el cliente](tarea)?
     - Cual es la persona mas adecuada para realizar [Traducir textos en ingles](tarea)?
-    - Cual es la persona mas adecuada para realizar [Refactorizar clases del proyecto](tarea)?
-    - Cual es la persona mas adecuada para realizar [Implementar text-to-speech y speech-to-text](tarea)?
-    - Cual es la persona mas adecuada para realizar [Armar pagina web del proyecto usando JavaScript](tarea)?
-    - Cual es la persona mas adecuada para realizar [Testear demo para futura presentacion](tarea)?
+    - Hola, Cual es la persona mas adecuada para realizar [Refactorizar clases del proyecto](tarea)?
+    - Buenos dias, Cual es la persona mas adecuada para realizar [Implementar text-to-speech y speech-to-text](tarea)?
+    - Buenas tardes, Cual es la persona mas adecuada para realizar [Armar pagina web del proyecto usando JavaScript](tarea)?
+    - Buenas noches, Cual es la persona mas adecuada para realizar [Testear demo para futura presentacion](tarea)?
     - Cual es la persona mas adecuada para realizar [Identificar tareas triviales en el planeamiento](tarea)?
-    - Cual es la persona mas adecuada para realizar [Implementar realidad virtual al entorno](tarea)?
-    - Cual es la persona mas adecuada para realizar [Realizar animaciones de los modelos](tarea)?
-    - Cual es la persona mas adecuada para realizar [Arreglar bugs en UI](tarea)?
-    - Cual es la persona mas adecuada para realizar [Realizar request en python a la base de datos](tarea)?
+    - Hola, Cual es la persona mas adecuada para realizar [Implementar realidad virtual al entorno](tarea)?
+    - Buenos dias, Cual es la persona mas adecuada para realizar [Realizar animaciones de los modelos](tarea)?
+    - Buenas tardes, Cual es la persona mas adecuada para realizar [Arreglar bugs en UI](tarea)?
+    - Buenas noches, Cual es la persona mas adecuada para realizar [Realizar request en python a la base de datos](tarea)?
     - Cual es la persona mas adecuada para realizar [Realizar request desde el front-end al servidor usando javascript](tarea)?
-    - Cual es la persona mas adecuada para realizar [Refactorizar codigo del proyecto de back-end en Java](tarea)?
+    - Hola, Cual es la persona mas adecuada para realizar [Refactorizar codigo del proyecto de back-end en Java](tarea)?
     - Quien es el mejor para realizar la tarea [Crear tabla en SQL](tarea)?
     - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script BotMovement](tarea)?
     - Quien es el mejor para realizar la tarea [Mejora del funcionamiento del script Notifier en Unity](tarea)?

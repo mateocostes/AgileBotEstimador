@@ -6,25 +6,24 @@ stories:
   steps:
   - intent: presentarse
   - action: guardar_nombre
-  - checkpoint: check_siguiente
 
 - story: camino_estimacion_tarea
   steps:
-  - checkpoint: check_siguiente
   - intent: estimacion_tarea
   - action: dar_motivo_estimacion
-  - checkpoint: check_siguiente
 
 - story: camino_persona_tarea
   steps:
-  - checkpoint: check_siguiente
   - intent: persona_tarea
   - action: dar_motivo_persona
-  - checkpoint: check_siguiente
 
-- story: camino_participante_no_valido
+- story: camino_agradecer
   steps:
-  - checkpoint: check_siguiente
+  - intent: agradecer
+  - action: utter_agradecer
+
+- story: camino_despedir
+  steps:
   - intent: despedir
   - action: utter_despedir
 

@@ -6,6 +6,7 @@ intents:
   - afirmar
   - negar
   - desafiar_bot
+  - agradecer
   - presentarse
   - estimacion_tarea
   - persona_tarea
@@ -31,6 +32,10 @@ responses:
   - text: "Chau!"
   - text: "Hasta luego!"
   - text: "Adios!"
+
+  utter_agradecer:
+  - text: "De nada!"
+  - text: "No hay problema!"
 
   utter_iamabot:
   - text: "Soy un agilebot."
