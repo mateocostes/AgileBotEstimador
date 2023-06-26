@@ -44,7 +44,7 @@ def writeArchivo(dire,diccionario):
         json.dump(diccionario,archivo)
         archivo.close()
 
-ip = "56e0-201-235-167-187.ngrok-free.app" #MODIFICAR
+ip = "9742-201-235-167-187.ngrok-free.app" #MODIFICAR
 api_endpoint_get_recomendacion = f"http://{ip}/dispatcher/get-recomendacion"
 api_endpoint_get_vector = f"http://{ip}/dispatcher/get-vector"
 diccionarioParticipantes = ""
@@ -171,112 +171,114 @@ def generarMotivos(tracker):
         motivoPersona4 = "La tarea mencionada carece de informacion necesaria para hacer una recomendacion."
         motivoPersona5 = "La falta de datos pertinentes dificulta la recomendacion de alguien para la tarea mencionada."
 
-    elif historico_tarea == tarea: #Si la tarea ya fue realizada
+    else:
         if (participante != None) and (participante == historico_ejecutor): #Si la persona que realiza la pregunta es la que realizo la tarea, dice usted en vez de su nombre
             historico_ejecutor = "usted"
-        
-        motivoEstimacion1 = f"La tarea ingresada ya fue realizada anteriormente por {historico_ejecutor}, con una demora de {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
-        motivoEstimacion2 = f"La solicitud de trabajo coincide con una tarea previa realizada por {historico_ejecutor}, quien tardo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas, en completarla."
-        motivoEstimacion3 = f"Segun los registros, {historico_ejecutor} ya ha abordado esa tarea y demoro {historico_puntos} puntos para completarla, es decir {historico_puntos * estimacionHora} horas."
-        motivoEstimacion4 = f"Esta tarea ya fue anteriormente realizada por {historico_ejecutor}, quien se retardo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas, para su finalizacion."
-        motivoEstimacion5 = f"El solicitante {historico_ejecutor} ya ha llevado a cabo una tarea identica, tardando alrededor de {historico_puntos} puntos para finalizarla, lo equivalente a {historico_puntos * estimacionHora} horas."
 
-        motivoPersona1 = f"Recomiendo a {historico_ejecutor}, ya que realizo la tarea ingresada anteriormente, tardando {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
-        motivoPersona2 = f"Te sugiero a {historico_ejecutor} para esta tarea, ya que ha completado exitosamente el trabajo previo en un tiempo de {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
-        motivoPersona3 = f"Basado en el historial de ejecucion, te recomiendo encarecidamente a {historico_ejecutor}. En la tarea anterior, demostro su experiencia al finalizarla con una estimacion precisa de {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
-        motivoPersona4 = f"Para esta tarea, te recomendaria a {historico_ejecutor} sin dudarlo. En la ocasion anterior, demostro un alto nivel de dedicacion y esfuerzo, completando la tarea en {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
-        motivoPersona5 = f"Mi recomendacion es asignar a {historico_ejecutor} para esta tarea. En la tarea anterior, mostro habilidades excepcionales y logro completarla con exito en tan solo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
-    else:
-        estimacion = diccionarioDatos["promedio_puntos"]
-        if len(diccionarioDatos["historicos"]) > 1:
-            #Se eligen dos historicos aleatorios del total
-            pos1, pos2 = seleccionarHistoricos(len(diccionarioDatos["historicos"]))
-            historico_tarea1 = ""
-            historico_ejecutor1 = ""
-            historico_puntos1 = ""
-            historico_tarea2 = ""
-            historico_ejecutor2 = ""
-            historico_puntos2 = ""
-            motivo_tarea_similar = ""
-            historico_tarea1, historico_ejecutor1, historico_puntos1 = leerDatosHistoricos(pos1, historico_tarea1, historico_ejecutor1, historico_puntos1)
-            historico_tarea2, historico_ejecutor2, historico_puntos2 = leerDatosHistoricos(pos2, historico_tarea2, historico_ejecutor2, historico_puntos2)
+        if historico_tarea == tarea: #Si la tarea ya fue realizada
+            motivoEstimacion1 = f"La tarea ingresada ya fue realizada anteriormente por {historico_ejecutor}, con una demora de {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
+            motivoEstimacion2 = f"La solicitud de trabajo coincide con una tarea previa realizada por {historico_ejecutor}, quien tardo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas, en completarla."
+            motivoEstimacion3 = f"Segun los registros, {historico_ejecutor} ya ha abordado esa tarea y demoro {historico_puntos} puntos para completarla, es decir {historico_puntos * estimacionHora} horas."
+            motivoEstimacion4 = f"Esta tarea ya fue anteriormente realizada por {historico_ejecutor}, quien se retardo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas, para su finalizacion."
+            motivoEstimacion5 = f"El solicitante {historico_ejecutor} ya ha llevado a cabo una tarea identica, tardando alrededor de {historico_puntos} puntos para finalizarla, lo equivalente a {historico_puntos * estimacionHora} horas."
 
-            if (participante != None): #Si la persona que realiza la pregunta es la que realizo la tarea, dice usted en vez de su nombre
-                if (participante == historico_ejecutor1):
-                    historico_ejecutor1 = "usted"
-                if (participante == historico_ejecutor2):
-                    historico_ejecutor2 = "usted"
+            motivoPersona1 = f"Recomiendo a {historico_ejecutor}, ya que realizo la tarea ingresada anteriormente, tardando {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
+            motivoPersona2 = f"Te sugiero a {historico_ejecutor} para esta tarea, ya que ha completado exitosamente el trabajo previo en un tiempo de {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
+            motivoPersona3 = f"Basado en el historial de ejecucion, te recomiendo encarecidamente a {historico_ejecutor}. En la tarea anterior, demostro su experiencia al finalizarla con una estimacion precisa de {historico_puntos} puntos, es decir {historico_puntos * estimacionHora} horas."
+            motivoPersona4 = f"Para esta tarea, te recomendaria a {historico_ejecutor} sin dudarlo. En la ocasion anterior, demostro un alto nivel de dedicacion y esfuerzo, completando la tarea en {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
+            motivoPersona5 = f"Mi recomendacion es asignar a {historico_ejecutor} para esta tarea. En la tarea anterior, mostro habilidades excepcionales y logro completarla con exito en tan solo {historico_puntos} puntos, lo equivalente a {historico_puntos * estimacionHora} horas."
 
-            if historico_ejecutor1 != historico_ejecutor2: #Si las tareas fueron realizadas por personas diferentes
-                motivo_tarea_similar = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos, realizada por {historico_ejecutor1}"
-                if historico_tarea2[0].lower() == 'i': #si la primera letra es "i"
-                    motivo_tarea_similar = f"{motivo_tarea_similar} e {historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
-                else:
-                    motivo_tarea_similar = f"{motivo_tarea_similar} y {historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
+        else: #Si la tarea ya no fue realizada
+            estimacion = diccionarioDatos["promedio_puntos"]
+            if len(diccionarioDatos["historicos"]) > 1: #Si hay mas de un registro en historicos
+                #Se eligen dos historicos aleatorios del total
+                pos1, pos2 = seleccionarHistoricos(len(diccionarioDatos["historicos"]))
+                historico_tarea1 = ""
+                historico_ejecutor1 = ""
+                historico_puntos1 = ""
+                historico_tarea2 = ""
+                historico_ejecutor2 = ""
+                historico_puntos2 = ""
+                motivo_tarea_similar = ""
+                historico_tarea1, historico_ejecutor1, historico_puntos1 = leerDatosHistoricos(pos1, historico_tarea1, historico_ejecutor1, historico_puntos1)
+                historico_tarea2, historico_ejecutor2, historico_puntos2 = leerDatosHistoricos(pos2, historico_tarea2, historico_ejecutor2, historico_puntos2)
 
-                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2}, podrian resolver perfectamente la nueva tarea."
-                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} demostraron habilidades sobresalientes y podrian resolver perfectamente la nueva tarea."
-                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado competencia y podrian abordar con exito la nueva tarea."
-                motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} se destacaron por su eficiencia y podrian resolver perfectamente la nueva tarea."
-                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado habilidades excepcionales y podrian abordar la nueva tarea con exito."
-            else: #Si las tareas fueron realizadas por la misma persona
-                motivo_tarea_similar = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos"
-                if historico_tarea2[0].lower() == 'i': #si la primera letra es "i"
-                    motivo_tarea_similar = f"{motivo_tarea_similar} e {historico_tarea2} con una estimacion de {historico_puntos2} puntos, ambas realizadas por {historico_ejecutor2}"
-                else:
-                    motivo_tarea_similar = f"{motivo_tarea_similar} y {historico_tarea2} con una estimacion de {historico_puntos2} puntos, ambas realizadas por {historico_ejecutor2}"
+                if (participante != None): #Si la persona que realiza la pregunta es la que realizo la tarea, dice usted en vez de su nombre
+                    if (participante == historico_ejecutor1):
+                        historico_ejecutor1 = "usted"
+                    if (participante == historico_ejecutor2):
+                        historico_ejecutor2 = "usted"
 
-                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, el mismo, podria resolver perfectamente la nueva tarea."
-                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, demostrando habilidades sobresalientes, podria resolver perfectamente la nueva tarea."
-                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, demostrando competencia, podria abordar con exito la nueva tarea."
-                motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, destacandose por su eficiencia, el mismo, podria resolver perfectamente la nueva tarea."
-                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, habiendo demostrado habilidades excepcionales, podria abordar la nueva tarea con exito."
+                if historico_ejecutor1 != historico_ejecutor2: #Si las tareas fueron realizadas por personas diferentes
+                    motivo_tarea_similar = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos, realizada por {historico_ejecutor1}"
+                    if historico_tarea2[0].lower() == 'i': #si la primera letra es "i"
+                        motivo_tarea_similar = f"{motivo_tarea_similar} e {historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
+                    else:
+                        motivo_tarea_similar = f"{motivo_tarea_similar} y {historico_tarea2} con una estimacion de {historico_puntos2} puntos, realizada por {historico_ejecutor2}"
 
-            motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
-            motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, propongo estimar la nueva tarea con {estimacion} puntos."
-            motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, sugiero una estimacion de {estimacion} puntos para la tarea actual."
-            motivoEstimacion4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, creo que una estimacion de {estimacion} puntos seria apropiada para la nueva tarea."
-            motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, considero razonable asignar una estimacion de {estimacion} puntos a la tarea actual."
+                    motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2}, podrian resolver perfectamente la nueva tarea."
+                    motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} demostraron habilidades sobresalientes y podrian resolver perfectamente la nueva tarea."
+                    motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado competencia y podrian abordar con exito la nueva tarea."
+                    motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} se destacaron por su eficiencia y podrian resolver perfectamente la nueva tarea."
+                    motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, tanto {historico_ejecutor1} como {historico_ejecutor2} han demostrado habilidades excepcionales y podrian abordar la nueva tarea con exito."
+                else: #Si las tareas fueron realizadas por la misma persona
+                    motivo_tarea_similar = f"{historico_tarea1} con una estimacion de {historico_puntos1} puntos"
+                    if historico_tarea2[0].lower() == 'i': #si la primera letra es "i"
+                        motivo_tarea_similar = f"{motivo_tarea_similar} e {historico_tarea2} con una estimacion de {historico_puntos2} puntos, ambas realizadas por {historico_ejecutor2}"
+                    else:
+                        motivo_tarea_similar = f"{motivo_tarea_similar} y {historico_tarea2} con una estimacion de {historico_puntos2} puntos, ambas realizadas por {historico_ejecutor2}"
 
-            if historico_puntos1 != historico_puntos2 and historico_ejecutor1 != historico_ejecutor2:
-                if historico_puntos1 > historico_puntos2: #Si una persona resolvio mas rapido una tarea que otra.
-                    motivoComparacionPersonas1 = f"Aunque ambos ejecutores son competentes, me inclino a recomendar a {historico_ejecutor1} debido a su desempeño notablemente mas rapido en tareas similares anteriores. Su eficiencia demostrada podria garantizar una entrega oportuna de la nueva tarea."
-                    motivoComparacionPersonas2 = f"Sin embargo, mi recomendacion principal es {historico_ejecutor1}, ya que demostro ser mas eficiente en el tiempo empleado."
-                    motivoComparacionPersonas3 = f"No obstante, te sugiero especialmente a {historico_ejecutor1}, quien completo la tarea en un tiempo menor, mostrando una mayor capacidad de entrega."
-                    motivoComparacionPersonas4 = f"A pesar de eso, mi preferencia recae en {historico_ejecutor1}, ya que ha demostrado un rendimiento mas rapido y efectivo en tareas similares anteriores."
-                    motivoComparacionPersonas5 = f"Sin embargo, mi recomendacion principal es asignar la tarea a {historico_ejecutor1}, quien logro terminarla en menos tiempo, lo que indica una mayor eficiencia en su trabajo."
-                else:
-                    motivoComparacionPersonas1 = f"Aunque ambos ejecutores son competentes, me inclino a recomendar a {historico_ejecutor2} debido a su desempeño notablemente mas rapido en tareas similares anteriores. Su eficiencia demostrada podria garantizar una entrega oportuna de la nueva tarea."
-                    motivoComparacionPersonas2 = f"Sin embargo, mi recomendacion principal es {historico_ejecutor2}, ya que demostro ser mas eficiente en el tiempo empleado."
-                    motivoComparacionPersonas3 = f"No obstante, te sugiero especialmente a {historico_ejecutor2}, quien completo la tarea en un tiempo menor, mostrando una mayor capacidad de entrega."
-                    motivoComparacionPersonas4 = f"A pesar de eso, mi preferencia recae en {historico_ejecutor2}, ya que ha demostrado un rendimiento mas rapido y efectivo en tareas similares anteriores."
-                    motivoComparacionPersonas5 = f"Sin embargo, mi recomendacion principal es asignar la tarea a {historico_ejecutor2}, quien logro terminarla en menos tiempo, lo que indica una mayor eficiencia en su trabajo."
-                
-                lista_comparacionPersonas = [motivoComparacionPersonas1, motivoComparacionPersonas2, motivoComparacionPersonas3, motivoComparacionPersonas4, motivoComparacionPersonas5]
-                motivoComparacionPersonas =  random.choice(lista_comparacionPersonas)
-                motivoPersona1 = f"{motivoPersona1} {motivoComparacionPersonas}"
-                motivoPersona2 = f"{motivoPersona2} {motivoComparacionPersonas}"
-                motivoPersona3 = f"{motivoPersona3} {motivoComparacionPersonas}"
-                motivoPersona4 = f"{motivoPersona4} {motivoComparacionPersonas}"
-                motivoPersona5 = f"{motivoPersona5} {motivoComparacionPersonas}"
-        else:
-            motivo_tarea_similar = f"{historico_tarea} con una estimacion de {historico_puntos} puntos, realizada por {historico_ejecutor}"
-            motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
-            motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, propongo estimar la nueva tarea con {estimacion} puntos."
-            motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, sugiero una estimacion de {estimacion} puntos para la tarea actual."
-            motivoEstimacion4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, creo que una estimacion de {estimacion} puntos seria apropiada para la nueva tarea."
-            motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, considero razonable asignar una estimacion de {estimacion} puntos a la tarea actual."
+                    motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, el mismo, podria resolver perfectamente la nueva tarea."
+                    motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, demostrando habilidades sobresalientes, podria resolver perfectamente la nueva tarea."
+                    motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, demostrando competencia, podria abordar con exito la nueva tarea."
+                    motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, destacandose por su eficiencia, el mismo, podria resolver perfectamente la nueva tarea."
+                    motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, habiendo demostrado habilidades excepcionales, podria abordar la nueva tarea con exito."
 
-            motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, {historico_ejecutor}, podria resolver perfectamente la nueva tarea."
-            motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, {historico_ejecutor} demostro habilidades sobresalientes y podrian resolver perfectamente la nueva tarea."
-            motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, {motivo_tarea_similar}, {historico_ejecutor} ha demostrado competencia y podrian abordar con exito la nueva tarea."
-            motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, {historico_ejecutor} se destaco por su eficiencia y podrian resolver perfectamente la nueva tarea."
-            motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, {historico_ejecutor} ha demostrado habilidades excepcionales y podrian abordar la nueva tarea con exito."
-                
-        lista_motivosEstimacion = [motivoEstimacion1, motivoEstimacion2, motivoEstimacion3, motivoEstimacion4, motivoEstimacion5]
-        lista_motivosPersona = [motivoPersona1, motivoPersona2, motivoPersona3, motivoPersona4, motivoPersona5]
-        motivoEstimacion =  random.choice(lista_motivosEstimacion)
-        motivoPersona =  random.choice(lista_motivosPersona)
+                motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
+                motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, propongo estimar la nueva tarea con {estimacion} puntos."
+                motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, sugiero una estimacion de {estimacion} puntos para la tarea actual."
+                motivoEstimacion4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, creo que una estimacion de {estimacion} puntos seria apropiada para la nueva tarea."
+                motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, considero razonable asignar una estimacion de {estimacion} puntos a la tarea actual."
+
+                if historico_puntos1 != historico_puntos2 and historico_ejecutor1 != historico_ejecutor2:
+                    if historico_puntos1 > historico_puntos2: #Si una persona resolvio mas rapido una tarea que otra.
+                        motivoComparacionPersonas1 = f"Aunque ambos ejecutores son competentes, me inclino a recomendar a {historico_ejecutor1} debido a su desempeño notablemente mas rapido en tareas similares anteriores. Su eficiencia demostrada podria garantizar una entrega oportuna de la nueva tarea."
+                        motivoComparacionPersonas2 = f"Sin embargo, mi recomendacion principal es {historico_ejecutor1}, ya que demostro ser mas eficiente en el tiempo empleado."
+                        motivoComparacionPersonas3 = f"No obstante, te sugiero especialmente a {historico_ejecutor1}, quien completo la tarea en un tiempo menor, mostrando una mayor capacidad de entrega."
+                        motivoComparacionPersonas4 = f"A pesar de eso, mi preferencia recae en {historico_ejecutor1}, ya que ha demostrado un rendimiento mas rapido y efectivo en tareas similares anteriores."
+                        motivoComparacionPersonas5 = f"Sin embargo, mi recomendacion principal es asignar la tarea a {historico_ejecutor1}, quien logro terminarla en menos tiempo, lo que indica una mayor eficiencia en su trabajo."
+                    else:
+                        motivoComparacionPersonas1 = f"Aunque ambos ejecutores son competentes, me inclino a recomendar a {historico_ejecutor2} debido a su desempeño notablemente mas rapido en tareas similares anteriores. Su eficiencia demostrada podria garantizar una entrega oportuna de la nueva tarea."
+                        motivoComparacionPersonas2 = f"Sin embargo, mi recomendacion principal es {historico_ejecutor2}, ya que demostro ser mas eficiente en el tiempo empleado."
+                        motivoComparacionPersonas3 = f"No obstante, te sugiero especialmente a {historico_ejecutor2}, quien completo la tarea en un tiempo menor, mostrando una mayor capacidad de entrega."
+                        motivoComparacionPersonas4 = f"A pesar de eso, mi preferencia recae en {historico_ejecutor2}, ya que ha demostrado un rendimiento mas rapido y efectivo en tareas similares anteriores."
+                        motivoComparacionPersonas5 = f"Sin embargo, mi recomendacion principal es asignar la tarea a {historico_ejecutor2}, quien logro terminarla en menos tiempo, lo que indica una mayor eficiencia en su trabajo."
+                    
+                    lista_comparacionPersonas = [motivoComparacionPersonas1, motivoComparacionPersonas2, motivoComparacionPersonas3, motivoComparacionPersonas4, motivoComparacionPersonas5]
+                    motivoComparacionPersonas =  random.choice(lista_comparacionPersonas)
+                    motivoPersona1 = f"{motivoPersona1} {motivoComparacionPersonas}"
+                    motivoPersona2 = f"{motivoPersona2} {motivoComparacionPersonas}"
+                    motivoPersona3 = f"{motivoPersona3} {motivoComparacionPersonas}"
+                    motivoPersona4 = f"{motivoPersona4} {motivoComparacionPersonas}"
+                    motivoPersona5 = f"{motivoPersona5} {motivoComparacionPersonas}"
+            else: #Si hay solo un registro en historicos
+                motivo_tarea_similar = f"{historico_tarea} con una estimacion de {historico_puntos} puntos, realizada por {historico_ejecutor}"
+                motivoEstimacion1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, me parece correcto que la nueva tarea se estime con un puntaje de {estimacion}"
+                motivoEstimacion2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, propongo estimar la nueva tarea con {estimacion} puntos."
+                motivoEstimacion3 = f"Tomando como referencia trabajos similares previamente completados, como {motivo_tarea_similar}, sugiero una estimacion de {estimacion} puntos para la tarea actual."
+                motivoEstimacion4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, creo que una estimacion de {estimacion} puntos seria apropiada para la nueva tarea."
+                motivoEstimacion5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, considero razonable asignar una estimacion de {estimacion} puntos a la tarea actual."
+
+                motivoPersona1 = f"Basandome en tareas realizadas anteriormente, como {motivo_tarea_similar}, {historico_ejecutor}, podria resolver perfectamente la nueva tarea."
+                motivoPersona2 = f"Considerando el historial de tareas previas, como {motivo_tarea_similar}, {historico_ejecutor} demostro habilidades sobresalientes y podrian resolver perfectamente la nueva tarea."
+                motivoPersona3 = f"Tomando como referencia trabajos similares previamente completados, {motivo_tarea_similar}, {historico_ejecutor} ha demostrado competencia y podrian abordar con exito la nueva tarea."
+                motivoPersona4 = f"Basandome en el desempeño en tareas anteriores, como {motivo_tarea_similar}, {historico_ejecutor} se destaco por su eficiencia y podrian resolver perfectamente la nueva tarea."
+                motivoPersona5 = f"Al analizar tareas similares realizadas en el pasado, como {motivo_tarea_similar}, {historico_ejecutor} ha demostrado habilidades excepcionales y podrian abordar la nueva tarea con exito."
+                    
+    lista_motivosEstimacion = [motivoEstimacion1, motivoEstimacion2, motivoEstimacion3, motivoEstimacion4, motivoEstimacion5]
+    lista_motivosPersona = [motivoPersona1, motivoPersona2, motivoPersona3, motivoPersona4, motivoPersona5]
+    motivoEstimacion =  random.choice(lista_motivosEstimacion)
+    motivoPersona =  random.choice(lista_motivosPersona)
 
     
 def darMotivo(tracker)-> bool:
